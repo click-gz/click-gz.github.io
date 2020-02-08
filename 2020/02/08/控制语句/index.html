@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/boke-copy.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/boke-copy%20(1).png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="控制语句程序设计中的控制语句包括：顺序，分支和循环语句。可以相互组成，可以相互独立使用。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="控制语句">
+<meta property="og:url" content="http://yoursite.com/2020/02/08/%E6%8E%A7%E5%88%B6%E8%AF%AD%E5%8F%A5/index.html">
+<meta property="og:site_name" content="B-BloG-G">
+<meta property="og:description" content="控制语句程序设计中的控制语句包括：顺序，分支和循环语句。可以相互组成，可以相互独立使用。">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-02-08T13:15:56.841Z">
+<meta property="article:modified_time" content="2020-02-08T13:15:56.841Z">
+<meta property="article:author" content="PIGZ">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/02/08/控制语句/"/>
+
+
+
+
+
+  <title>控制语句 | B-BloG-G</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">B-BloG-G</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">如果你学不会顺流而下，就请放弃逆流而上！</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            
+            guestbook
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-python">
+          <a href="/categories/python" rel="section">
+            
+            python
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/08/%E6%8E%A7%E5%88%B6%E8%AF%AD%E5%8F%A5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="PIGZ">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="B-BloG-G">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">控制语句</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-08T21:15:56+08:00">
+                2020-02-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="控制语句"><a href="#控制语句" class="headerlink" title="控制语句"></a>控制语句</h1><p>程序设计中的控制语句包括：顺序，分支和循环语句。可以相互组成，可以相互独立使用。</p>
+<a id="more"></a>
+
+<h2 id="分支语句："><a href="#分支语句：" class="headerlink" title="分支语句："></a>分支语句：</h2><p>分支语句使得程序获得了“判断力”。分支语句也叫条件语句，可以根据语句判断进行相应的操作。</p>
+<blockquote>
+<p>if</p>
+<p>if-else</p>
+<p>elif</p>
+</blockquote>
+<h3 id="if结构："><a href="#if结构：" class="headerlink" title="if结构："></a>if结构：</h3><blockquote>
+<p>if 内容：</p>
+<p>​    &lt;语句&gt;</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a=<span class="number">1</span></span><br><span class="line">b=<span class="number">2</span></span><br><span class="line"><span class="keyword">if</span> b&gt;a:</span><br><span class="line">    print(b)</span><br></pre></td></tr></table></figure>
+
+<h3 id="if-else结构："><a href="#if-else结构：" class="headerlink" title="if-else结构："></a>if-else结构：</h3><blockquote>
+<p>if 内容：</p>
+<p>​    &lt;语句&gt;</p>
+<p>else :</p>
+<p>​    &lt;语句&gt;</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a=<span class="number">1</span></span><br><span class="line">b=<span class="number">2</span></span><br><span class="line"><span class="keyword">if</span> b&gt;a:</span><br><span class="line">    print(b)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(a)</span><br></pre></td></tr></table></figure>
+
+<h3 id="elif结构："><a href="#elif结构：" class="headerlink" title="elif结构："></a>elif结构：</h3><p>在使用if-else结构时，如果出翔多个else 语句，可以使用elif结构。</p>
+<blockquote>
+<p>if 内容：</p>
+<p>​    &lt;语句&gt;</p>
+<p>elif 内容：</p>
+<p>​    &lt;语句&gt;</p>
+<p>elif 内容：</p>
+<p>​    &lt;语句&gt;</p>
+<p>else:</p>
+<p>​    &lt;语句&gt;</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a=<span class="number">1</span></span><br><span class="line">b=<span class="number">1</span></span><br><span class="line"><span class="keyword">if</span> a&gt;b:</span><br><span class="line">    print(a)</span><br><span class="line"><span class="keyword">elif</span> a&lt;b:</span><br><span class="line">    print(b)</span><br><span class="line"><span class="keyword">else</span> :</span><br><span class="line">    print(<span class="string">"a=b"</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="三元运算符替代品—条件表达式："><a href="#三元运算符替代品—条件表达式：" class="headerlink" title="三元运算符替代品—条件表达式："></a>三元运算符替代品—条件表达式：</h3><blockquote>
+<p>表达式1 if 条件 else 表达式2</p>
+<p>// 在两个表达式中选其一</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a= <span class="string">"dsa"</span> <span class="keyword">if</span> <span class="number">1</span>&lt;<span class="number">2</span> <span class="keyword">else</span> <span class="string">"sda"</span></span><br><span class="line">print(a)</span><br><span class="line">================</span><br><span class="line">sda</span><br></pre></td></tr></table></figure>
+
+<h2 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h2><p>循环语句能使代码重复使用。</p>
+<h3 id="while语句："><a href="#while语句：" class="headerlink" title="while语句："></a>while语句：</h3><p>while语句是一种先判断后循环的语句，需要先进行判断，是否符合while后面的条件。</p>
+<blockquote>
+<p>while 条件:</p>
+<p>​    &lt;内容&gt;</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">i=<span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> i&lt;<span class="number">9</span>:</span><br><span class="line">    print(<span class="string">"asd"</span>)</span><br><span class="line">    i+=<span class="number">1</span></span><br><span class="line">---------------</span><br><span class="line">asd</span><br><span class="line">asd</span><br><span class="line">asd</span><br><span class="line">asd</span><br><span class="line">asd</span><br><span class="line">asd</span><br><span class="line">asd</span><br><span class="line">asd</span><br><span class="line">asd</span><br></pre></td></tr></table></figure>
+
+<h3 id="for-语句："><a href="#for-语句：" class="headerlink" title="for 语句："></a>for 语句：</h3><p>python的for语句只用于序列（字符串，列表，元组，字典）。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">x=[<span class="number">123</span>,<span class="number">342</span>,<span class="number">453</span>,<span class="number">123</span>]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> x:</span><br><span class="line">    print(i)</span><br><span class="line">print(<span class="string">"***"</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(x)):   <span class="comment"># range(b)表示从0到b，左闭右开，len(x)表示x的长度  </span></span><br><span class="line">    print(x[i])</span><br><span class="line">-------------</span><br><span class="line"><span class="number">123</span></span><br><span class="line"><span class="number">342</span></span><br><span class="line"><span class="number">453</span></span><br><span class="line"><span class="number">123</span></span><br><span class="line">***</span><br><span class="line"><span class="number">123</span></span><br><span class="line"><span class="number">342</span></span><br><span class="line"><span class="number">453</span></span><br><span class="line"><span class="number">123</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="跳转语句："><a href="#跳转语句：" class="headerlink" title="跳转语句："></a>跳转语句：</h2><blockquote>
+<p>break,continue,return</p>
+</blockquote>
+<p>跳转语句可以实现程序语句的执行顺序改变。</p>
+<h3 id="break语句"><a href="#break语句" class="headerlink" title="break语句"></a>break语句</h3><p>break语句可用于while和for语句，用于强制跳出当前一级的循环。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">i=<span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> i&lt;<span class="number">9</span>:</span><br><span class="line">    <span class="keyword">if</span> i==<span class="number">3</span>:</span><br><span class="line">        <span class="keyword">break</span>           <span class="comment"># 跳出while循环</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(i)</span><br><span class="line">        i+=<span class="number">1</span></span><br><span class="line">-----------------</span><br><span class="line"><span class="number">0</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line">===========================</span><br><span class="line">i=<span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">10</span>):</span><br><span class="line">    <span class="keyword">while</span> i&lt;<span class="number">9</span>:</span><br><span class="line">        <span class="keyword">if</span> i==<span class="number">3</span>:</span><br><span class="line">            <span class="keyword">break</span>        <span class="comment"># 只跳出while循环</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            print(i)</span><br><span class="line">            i+=<span class="number">1</span></span><br><span class="line">    print(<span class="string">"***"</span>)</span><br><span class="line">-------------------------------</span><br><span class="line"><span class="number">0</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line">***</span><br><span class="line">***</span><br><span class="line">***</span><br><span class="line">***</span><br><span class="line">***</span><br><span class="line">***</span><br><span class="line">***</span><br><span class="line">***</span><br><span class="line">***</span><br><span class="line">***</span><br></pre></td></tr></table></figure>
+
+<h3 id="continue-语句："><a href="#continue-语句：" class="headerlink" title="continue 语句："></a>continue 语句：</h3><p>跳过本循环下面未执行的程序语句，进行下一轮循环。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">i=<span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> i&lt;<span class="number">9</span>:</span><br><span class="line">    i+=<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> i==<span class="number">3</span>:</span><br><span class="line">        <span class="keyword">continue</span>    <span class="comment"># 当i等于三时不进行下面的语句</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(i)</span><br><span class="line">------------------------</span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">4</span></span><br><span class="line"><span class="number">5</span></span><br><span class="line"><span class="number">6</span></span><br><span class="line"><span class="number">7</span></span><br><span class="line"><span class="number">8</span></span><br><span class="line"><span class="number">9</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="while，for与else的合用："><a href="#while，for与else的合用：" class="headerlink" title="while，for与else的合用："></a>while，for与else的合用：</h2><p>当while，for语句在执行过程中没有中断，没有运行break，return时，才会执行下面的else语句。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">i=<span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> i&lt;<span class="number">9</span>:</span><br><span class="line">    i+=<span class="number">1</span></span><br><span class="line">    print(i)</span><br><span class="line">    </span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(i)</span><br><span class="line">-----------------------没有被打断</span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="number">4</span></span><br><span class="line"><span class="number">5</span></span><br><span class="line"><span class="number">6</span></span><br><span class="line"><span class="number">7</span></span><br><span class="line"><span class="number">8</span></span><br><span class="line"><span class="number">9</span></span><br><span class="line">===================================</span><br><span class="line">i=<span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> i&lt;<span class="number">9</span>:</span><br><span class="line">    i+=<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> i==<span class="number">3</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(i)</span><br><span class="line">    	</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(i)</span><br><span class="line">----------------------------------被<span class="keyword">break</span>打断，没有执行<span class="keyword">else</span>下面的语句</span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/02/08/%E8%BF%90%E7%AE%97%E7%AC%A6/" rel="next" title="运算符">
+                <i class="fa fa-chevron-left"></i> 运算符
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.gif"
+                alt="PIGZ" />
+            
+              <p class="site-author-name" itemprop="name">PIGZ</p>
+              <p class="site-description motion-element" itemprop="description">胡说八道</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#控制语句"><span class="nav-number">1.</span> <span class="nav-text">控制语句</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#分支语句："><span class="nav-number">1.1.</span> <span class="nav-text">分支语句：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#if结构："><span class="nav-number">1.1.1.</span> <span class="nav-text">if结构：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#if-else结构："><span class="nav-number">1.1.2.</span> <span class="nav-text">if-else结构：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#elif结构："><span class="nav-number">1.1.3.</span> <span class="nav-text">elif结构：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三元运算符替代品—条件表达式："><span class="nav-number">1.1.4.</span> <span class="nav-text">三元运算符替代品—条件表达式：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#循环语句"><span class="nav-number">1.2.</span> <span class="nav-text">循环语句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#while语句："><span class="nav-number">1.2.1.</span> <span class="nav-text">while语句：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#for-语句："><span class="nav-number">1.2.2.</span> <span class="nav-text">for 语句：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#跳转语句："><span class="nav-number">1.3.</span> <span class="nav-text">跳转语句：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#break语句"><span class="nav-number">1.3.1.</span> <span class="nav-text">break语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#continue-语句："><span class="nav-number">1.3.2.</span> <span class="nav-text">continue 语句：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#while，for与else的合用："><span class="nav-number">1.4.</span> <span class="nav-text">while，for与else的合用：</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">PIGZ</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+  
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
