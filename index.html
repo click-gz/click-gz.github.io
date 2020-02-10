@@ -259,6 +259,230 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/10/%E5%87%BD%E6%95%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="PIGZ">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="B-BloG-G">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/02/10/%E5%87%BD%E6%95%B0/" itemprop="url">函数</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-10T14:21:38+08:00">
+                2020-02-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><p>定义：</p>
+<blockquote>
+<p> 函数是可重复使用的，用来实现单一功能的代码段</p>
+</blockquote>
+<blockquote>
+<p> 函数能提高应用的模块性和代码的重复利用率</p>
+</blockquote>
+<h2 id="定义函数："><a href="#定义函数：" class="headerlink" title="定义函数："></a>定义函数：</h2><blockquote>
+<p>def 函数名（参数）：</p>
+<p>​    函数体</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">max</span><span class="params">(a,b)</span>:</span>    <span class="comment"># 求两者中较大值的函数</span></span><br><span class="line">    <span class="keyword">if</span> a&gt;b:</span><br><span class="line">        print(a)</span><br><span class="line">    <span class="keyword">else</span> :</span><br><span class="line">        print(b)</span><br></pre></td></tr></table></figure>
+
+<h2 id="函数参数："><a href="#函数参数：" class="headerlink" title="函数参数："></a>函数参数：</h2><h3 id="使用关键字参数调用函数："><a href="#使用关键字参数调用函数：" class="headerlink" title="使用关键字参数调用函数："></a>使用关键字参数调用函数：</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hi</span><span class="params">(a,b)</span>:</span></span><br><span class="line">    print(b)</span><br><span class="line">    print(a)</span><br><span class="line">hi(<span class="number">1</span>,<span class="number">2</span>)   <span class="comment"># 不使用关键字参数函数调用</span></span><br><span class="line">hi(a=<span class="number">2</span>,b=<span class="number">1</span>)  <span class="comment"># 使用关键车子参数函数调用，a,b顺序可以调换</span></span><br></pre></td></tr></table></figure>
+
+<p>一旦其中一个参数使用了关键字参数调用函数，其他参数也需要调用，否则可能会有错误发生。</p>
+<h3 id="参数默认值："><a href="#参数默认值：" class="headerlink" title="参数默认值："></a>参数默认值：</h3><p>在定义函数的时候，可以设置一个参数为默认值，之后在调用时，不需要传入相应参数。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hi</span><span class="params">(name=<span class="string">"卡布奇诺"</span>)</span>:</span>   <span class="comment"># 默认参数</span></span><br><span class="line">    <span class="keyword">return</span> name</span><br><span class="line">a=hi(<span class="string">"quechao"</span>)     <span class="comment"># 修改默认参数 </span></span><br><span class="line">b=hi()             <span class="comment"># 调用原函数，仍使用默认参数</span></span><br><span class="line">print(a)</span><br><span class="line">print(b)</span><br><span class="line">--------------------</span><br><span class="line">quechao</span><br><span class="line">卡布奇诺</span><br></pre></td></tr></table></figure>
+
+<p>python通过使用参数默认，可以实现类似函数重载的功能。参数默认值只需要定义一个函数而实现重载定义多个函数。</p>
+<h3 id="可变参数："><a href="#可变参数：" class="headerlink" title="可变参数："></a>可变参数：</h3><p>python中函数的参数个数是可以变化的，它可以接受不确定数量的参数，这种参数叫做可变参数。python中可变参数有两种,在参数前加<em>或者*</em>形式，*可变参数在函数中被组装成一个元组，**可变参数在函数中被组装成一个字典。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># *可变参数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">tot</span><span class="params">(*num,sum=<span class="number">0</span>)</span>:</span></span><br><span class="line">    print(type(num))</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> num:</span><br><span class="line">        sum+=i</span><br><span class="line">    print(sum)</span><br><span class="line">tot(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>)</span><br><span class="line">x=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">tot(<span class="number">1</span>,*x)        <span class="comment"># *的作用为将x拆包为：1，2，3的形式</span></span><br><span class="line">------------------------</span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">tuple</span>'&gt;</span></span><br><span class="line"><span class="class">21</span></span><br><span class="line"><span class="class">&lt;<span class="title">class</span> '<span class="title">tuple</span>'&gt;</span></span><br><span class="line"><span class="class">7</span></span><br><span class="line">==========================================</span><br><span class="line"><span class="comment"># **可变参数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">show</span><span class="params">(sep=<span class="string">":"</span>,**info)</span>:</span></span><br><span class="line">    print(<span class="string">"----------"</span>)</span><br><span class="line">    <span class="keyword">for</span> key,value <span class="keyword">in</span> info.items():</span><br><span class="line">        print(key,sep,value)</span><br><span class="line">show(<span class="string">"-&gt;"</span>,name=<span class="string">'as'</span>,age=<span class="number">12</span>,sex=<span class="literal">True</span>)  <span class="comment"># -&gt;给sep，后面生成字典键值对</span></span><br><span class="line">stu=&#123;<span class="string">"name"</span>:<span class="string">"jo"</span>,<span class="string">"age"</span>:<span class="number">12</span>&#125;</span><br><span class="line">show(**stu)   <span class="comment"># **将字典里面的内容拆包成键值对</span></span><br><span class="line">----------------------</span><br><span class="line">----------</span><br><span class="line">name -&gt; as</span><br><span class="line">age -&gt; 12</span><br><span class="line">sex -&gt; True</span><br><span class="line">----------</span><br><span class="line">name : jo</span><br><span class="line">age : <span class="number">12</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="函数返回值："><a href="#函数返回值：" class="headerlink" title="函数返回值："></a>函数返回值：</h2><blockquote>
+<p>无返回值，单一返回值和多返回值</p>
+</blockquote>
+<h3 id="无返回值："><a href="#无返回值：" class="headerlink" title="无返回值："></a>无返回值：</h3><p>有的函数只是为了处理某个过程，没有返回值。事实上是返回了N哦呢，表示没有意义。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hi</span><span class="params">()</span>:</span>          <span class="comment"># 没有返回值，只是一个输出</span></span><br><span class="line">    print(<span class="string">"hello world"</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="单一返回值："><a href="#单一返回值：" class="headerlink" title="单一返回值："></a>单一返回值：</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hi</span><span class="params">()</span>:</span>      <span class="comment"># 函数返回一个值，调用该函数就会获得返回的值</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">12</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">h</span><span class="params">()</span>:</span></span><br><span class="line">    a=hi()</span><br><span class="line">    print(a)   <span class="comment"># a=12</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="多返回值："><a href="#多返回值：" class="headerlink" title="多返回值："></a>多返回值：</h3><p>使用元组返回多个返回值。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hi</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> (<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">h</span><span class="params">()</span>:</span></span><br><span class="line">    a=hi()</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> a:</span><br><span class="line">        print(i)</span><br></pre></td></tr></table></figure>
+
+<h2 id="函数变量作用域："><a href="#函数变量作用域：" class="headerlink" title="函数变量作用域："></a>函数变量作用域：</h2><blockquote>
+<p>全局变量：程序内有效</p>
+<p>局部变量：出了函数就没有用了</p>
+<p>如果在局部中出现了全局变量的改变，除非是用global方法，不然不会影响全局变量</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">x=<span class="number">20</span>    <span class="comment"># 全局变量</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hi</span><span class="params">(x)</span>:</span></span><br><span class="line">    y=<span class="number">13</span>   <span class="comment"># 局部变量</span></span><br><span class="line">    print(x,y)</span><br><span class="line">    x=<span class="number">14</span>   <span class="comment"># 局部变量</span></span><br><span class="line">    print(x)</span><br><span class="line">hi(x)      <span class="comment"># 调用函数</span></span><br><span class="line">print(x)   <span class="comment"># x为全局变量</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">h</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">global</span> x   <span class="comment"># 修改全局变量</span></span><br><span class="line">    x=<span class="number">10</span></span><br><span class="line">h()        <span class="comment"># 调用函数</span></span><br><span class="line">print(x)</span><br><span class="line">------------------</span><br><span class="line"><span class="number">20</span> <span class="number">13</span></span><br><span class="line"><span class="number">14</span></span><br><span class="line"><span class="number">20</span></span><br><span class="line"><span class="number">10</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="生成器："><a href="#生成器：" class="headerlink" title="生成器："></a>生成器：</h2><p>在一个函数中常用return后返回数据，但有时候会使用yield关键字返回数据，使用yield关键字的函数返回的是一个生成器(generator)对象，可迭代。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 计算平方数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fang</span><span class="params">(n)</span>:</span>   <span class="comment"># 一般方法</span></span><br><span class="line">    x=[]</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,n+<span class="number">1</span>):</span><br><span class="line">        x.append(i**<span class="number">2</span>)</span><br><span class="line">    <span class="keyword">return</span> x</span><br><span class="line">list=fang(<span class="number">5</span>)</span><br><span class="line">print(type(list))</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> list:</span><br><span class="line">    print(i)</span><br><span class="line">---------------------</span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">list</span>'&gt;</span></span><br><span class="line"><span class="class">1</span></span><br><span class="line"><span class="class">4</span></span><br><span class="line"><span class="class">9</span></span><br><span class="line"><span class="class">16</span></span><br><span class="line"><span class="class">25</span></span><br><span class="line">=========================</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fang</span><span class="params">(n)</span>:</span>      <span class="comment"># 使用生成器</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,n+<span class="number">1</span>):</span><br><span class="line">        <span class="keyword">yield</span> i**<span class="number">2</span></span><br><span class="line">x=fang(<span class="number">5</span>)</span><br><span class="line">print(type(x))</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> x:</span><br><span class="line">    print(i)</span><br><span class="line">-----------------------------</span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">generator</span>'&gt;</span></span><br><span class="line"><span class="class">1</span></span><br><span class="line"><span class="class">4</span></span><br><span class="line"><span class="class">9</span></span><br><span class="line"><span class="class">16</span></span><br><span class="line"><span class="class">25</span></span><br></pre></td></tr></table></figure>
+
+<p>生成器对象是一种可迭代的对象，可迭代对象通过__next__()方法获得元素。使用for循环打印生成器元素，就是隐形调用了该方法。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fang</span><span class="params">(n)</span>:</span>      <span class="comment"># 使用生成器</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,n+<span class="number">1</span>):</span><br><span class="line">        <span class="keyword">yield</span> i**<span class="number">2</span></span><br><span class="line">x=fang(<span class="number">5</span>)</span><br><span class="line">print(x.__next__())</span><br><span class="line">print(x.__next__())</span><br><span class="line">---------------------</span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">4</span></span><br></pre></td></tr></table></figure>
+
+<p>生成器使用yield返回数据与一般函数用return返回数据不同，它是先返回一个数据，然后函数暂停，知道再次调用__next__方法，才会进行下一步，而return则是返回后就停止函数。</p>
+<p><img src="https://s2.ax1x.com/2020/02/10/14LATe.png" alt="14LATe.png"></p>
+<h2 id="嵌套函数："><a href="#嵌套函数：" class="headerlink" title="嵌套函数："></a>嵌套函数：</h2><p>函数还可以被定义在另一个函数里面，称作嵌套函数。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">suan</span><span class="params">(a,b,c)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sum</span><span class="params">(e,f)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> e+f</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">jian</span><span class="params">(g,h)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> g-h</span><br><span class="line">    <span class="keyword">if</span> c==<span class="string">"+"</span>:</span><br><span class="line">        print(sum(a,b))</span><br><span class="line">    <span class="keyword">if</span> c==<span class="string">"-"</span>:</span><br><span class="line">        print(jian(a,b))</span><br><span class="line">suan(<span class="number">1</span>,<span class="number">2</span>,<span class="string">"+"</span>)</span><br><span class="line">------------------</span><br><span class="line"><span class="number">3</span></span><br></pre></td></tr></table></figure>
+
+<p>嵌套在函数内部的函数，无法在函数外部访问，否则会报错。</p>
+<h2 id="附："><a href="#附：" class="headerlink" title="附："></a>附：</h2><h3 id="Lambda函数："><a href="#Lambda函数：" class="headerlink" title="Lambda函数："></a>Lambda函数：</h3><p>Lambda函数本质上是一种匿名函数。</p>
+<blockquote>
+<p>lambda 参数列表: Lambda 体</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">x=<span class="keyword">lambda</span> a,b: a+b</span><br><span class="line">print(x(<span class="number">1</span>,<span class="number">2</span>))</span><br><span class="line">-------------</span><br><span class="line"><span class="number">3</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="三大基础函数"><a href="#三大基础函数" class="headerlink" title="三大基础函数"></a>三大基础函数</h3><blockquote>
+<p>filter函数</p>
+<p>map函数</p>
+<p>reduce函数</p>
+</blockquote>
+<h4 id="filter函数："><a href="#filter函数：" class="headerlink" title="filter函数："></a>filter函数：</h4><p> filter 函数将可迭代的对象元素进行筛选：</p>
+<blockquote>
+<p> filter(function,iterable)</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> filter(<span class="keyword">lambda</span> x:x%<span class="number">2</span>==<span class="number">0</span>,(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>)):</span><br><span class="line">  print(i) <span class="comment"># 选择偶数</span></span><br><span class="line"></span><br><span class="line">L=[<span class="string">'asd'</span>,<span class="string">'fsdf'</span>,<span class="string">'asdaad'</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> filter(<span class="keyword">lambda</span> x:x.startswith(<span class="string">'a'</span>),L):</span><br><span class="line">	print(i)  <span class="comment"># 选择开头是“a"字母的</span></span><br><span class="line">-----------------------------</span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">4</span></span><br><span class="line">asd</span><br><span class="line">asdaad</span><br></pre></td></tr></table></figure>
+
+<h4 id="map函数："><a href="#map函数：" class="headerlink" title="map函数："></a>map函数：</h4><p> map函数适用于映射操作，可以将迭代对象的元素进行变换: </p>
+<blockquote>
+<p> map(function,iterable)</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">L=[<span class="string">'asds'</span>,<span class="string">'DAFSD'</span>,<span class="string">'ADAsad'</span>]</span><br><span class="line"></span><br><span class="line">l=map(<span class="keyword">lambda</span> x:x.lower(),L)  <span class="comment"># 将L中元素变为小写后映射给l</span></span><br><span class="line"></span><br><span class="line">print(list(l))  </span><br><span class="line">-------------------------</span><br><span class="line">[<span class="string">'asds'</span>, <span class="string">'dafsd'</span>, <span class="string">'adasad'</span>]</span><br></pre></td></tr></table></figure>
+
+<h4 id="reduce函数："><a href="#reduce函数：" class="headerlink" title="reduce函数："></a>reduce函数：</h4><p>reduce函数是将多个数据累计进行函数运算：</p>
+<blockquote>
+<p>reduce(function,iterable)</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> reduce</span><br><span class="line"></span><br><span class="line">l=(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>)</span><br><span class="line"></span><br><span class="line">print(reduce(<span class="keyword">lambda</span> x,y:x+y,l))  <span class="comment"># 将l中的元素累加</span></span><br><span class="line">------------------</span><br><span class="line"><span class="number">10</span></span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/09/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1744,141 +1968,13 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/06/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="PIGZ">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="B-BloG-G">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/01/06/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-06T01:08:06+08:00">
-                2020-01-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">&lt;i class&#x3D;&quot;fa fa-angle-right&quot;&gt;&lt;&#x2F;i&gt;</a>
+  </nav>
+
 
 
           </div>
@@ -1926,7 +2022,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
