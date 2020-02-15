@@ -1,6 +1,331 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>python常用模块</title>
+    <url>/2020/02/15/python%E5%B8%B8%E7%94%A8%E6%A8%A1%E5%9D%97/</url>
+    <content><![CDATA[<h1 id="pyhton中常用的模块"><a href="#pyhton中常用的模块" class="headerlink" title="pyhton中常用的模块"></a>pyhton中常用的模块</h1><h2 id="math模块"><a href="#math模块" class="headerlink" title="math模块"></a>math模块</h2><p>math模块进行数学运算，如指数，对数，平方根和三角函数等等。math模块中的函数对象不包括复数，若要进行复数运算，应用cmath模块。</p>
+<h3 id="舍入函数："><a href="#舍入函数：" class="headerlink" title="舍入函数："></a>舍入函数：</h3><p>math模块中提供的舍入函数有:math.ceil(a)和math.floor(a)。math.ceil(a)是返回大于或等于a的最小整数，math.floor(a)是返回小于或等于a的最大整数。在python中还存在一个内置函数，不需要调用math模块，直接使用的round(a)函数，对a进行四舍五入。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">&gt;&gt;&gt;round(<span class="number">1.2</span>)</span><br><span class="line"><span class="number">1</span></span><br><span class="line">&gt;&gt;&gt;round(<span class="number">1.5</span>)</span><br><span class="line"><span class="number">2</span></span><br><span class="line">&gt;&gt;&gt;<span class="keyword">import</span> math</span><br><span class="line">&gt;&gt;&gt;math.ceil(<span class="number">1.2</span>)</span><br><span class="line"><span class="number">2</span>   <span class="comment"># 类似于只取整数部分再加1</span></span><br><span class="line">&gt;&gt;&gt;math.floor(<span class="number">1.5</span>)</span><br><span class="line"><span class="number">1</span>    <span class="comment"># 类似于只取整数部分</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="幂和对数函数："><a href="#幂和对数函数：" class="headerlink" title="幂和对数函数："></a>幂和对数函数：</h3><blockquote>
+<p>对数运算：math.log(a,b)  其中a为真数，b为底数。返回以b为底的a的对数值</p>
+<p>平方根：math.sqrt(a) 返回a的平方根</p>
+<p>幂运算：math.pow(a,b) 返回a的b次幂</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> math</span><br><span class="line">a=<span class="number">4</span></span><br><span class="line">b=<span class="number">2</span></span><br><span class="line">print(math.log(a,b))</span><br><span class="line">print(math.sqrt(a))</span><br><span class="line">print(math.pow(a,b))</span><br><span class="line">----------------------</span><br><span class="line"><span class="number">2.0</span></span><br><span class="line"><span class="number">2.0</span></span><br><span class="line"><span class="number">16.0</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="三角函数："><a href="#三角函数：" class="headerlink" title="三角函数："></a>三角函数：</h3><blockquote>
+<p>math.sin(a) : 正弦函数</p>
+<p>math.cos(a):  余弦函数</p>
+<p>math.tan(a):  正切函数</p>
+<p>math.asin(a):  反正弦函数</p>
+<p>math.acos(a):  反余弦函数</p>
+<p>math.atan(a):   反正切函数</p>
+</blockquote>
+<p>上述函数中的参数a是弧度，有时需要将弧度转换为角度或将角度转换为弧度：</p>
+<blockquote>
+<p>math.degrees(a)： 将弧度a转化为角度</p>
+<p>math.radians(a)： 将角度a转化为弧度</p>
+</blockquote>
+<p><strong>math.pi表示三角中的$\pi$</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> math</span><br><span class="line">a=math.degrees(<span class="number">0.5</span>*math.pi)</span><br><span class="line">b=math.radians(<span class="number">90</span>/math.pi)</span><br><span class="line">print(a,b)</span><br><span class="line">-----------------------</span><br><span class="line"><span class="number">90.0</span> <span class="number">0.5</span></span><br><span class="line">================</span><br><span class="line"><span class="keyword">import</span> math</span><br><span class="line">a=math.radians(<span class="number">45</span>/math.pi)</span><br><span class="line">print(a)</span><br><span class="line">b=math.sin(a)</span><br><span class="line">print(b)</span><br><span class="line">c=math.asin(b)</span><br><span class="line">print(c)</span><br><span class="line">print(math.tan(a))</span><br><span class="line">-----------------------</span><br><span class="line"><span class="number">0.25</span></span><br><span class="line"><span class="number">0.24740395925452294</span></span><br><span class="line"><span class="number">0.25</span></span><br><span class="line"><span class="number">0.25534192122103627</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="random模块"><a href="#random模块" class="headerlink" title="random模块"></a>random模块</h2><p>random模块提供了一些生成随机数的函数。</p>
+<blockquote>
+<p>random.random()：返回范围大于等于0.0且小于1.0的随机浮点数。</p>
+<p>random.randrange(stop)：返回范围大于0且小于stop，步长为1的随机整数。</p>
+<p>random.randrange(start,stop[,step])：返回范围大于等于start且小于stop，步长为step的随机整数。</p>
+<p>random.randint(a,b)：返回范围大于等于a且小于等于b的随机整数</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">random1</span><span class="params">()</span>:</span></span><br><span class="line">    x=[]</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):</span><br><span class="line">        x.append(random.random())</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(x) <span class="comment"># 0.0到1.0的随机浮点数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">random2</span><span class="params">()</span>:</span></span><br><span class="line">    x=[]</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):</span><br><span class="line">        x.append(random.randrange(<span class="number">100</span>))</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(x)  <span class="comment"># 0到100的随机整数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">random3</span><span class="params">()</span>:</span></span><br><span class="line">    x=[]</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):</span><br><span class="line">        x.append(random.randrange(<span class="number">90</span>,<span class="number">100</span>))</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(x)  <span class="comment"># 90到100的随机整数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">random4</span><span class="params">()</span>:</span></span><br><span class="line">    x=[]</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):</span><br><span class="line">        x.append(random.randint(<span class="number">10</span>,<span class="number">30</span>))</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(x)  <span class="comment"># 10到30的随机整数</span></span><br><span class="line">random1()</span><br><span class="line">random2()</span><br><span class="line">random3()</span><br><span class="line">random4()</span><br><span class="line">-------------------------</span><br><span class="line">[<span class="number">0.024895930949429435</span>, <span class="number">0.9050858311416454</span>, <span class="number">0.11252800826444875</span>, <span class="number">0.8611396144459876</span>, <span class="number">0.0353702249880371</span>, <span class="number">0.7039905482181432</span>, <span class="number">0.3694177372612416</span>, <span class="number">0.8618463491865753</span>, <span class="number">0.8543634602239153</span>, <span class="number">0.9771965860792426</span>]</span><br><span class="line">[<span class="number">13</span>, <span class="number">47</span>, <span class="number">49</span>, <span class="number">25</span>, <span class="number">64</span>, <span class="number">72</span>, <span class="number">98</span>, <span class="number">73</span>, <span class="number">2</span>, <span class="number">1</span>]</span><br><span class="line">[<span class="number">97</span>, <span class="number">93</span>, <span class="number">93</span>, <span class="number">96</span>, <span class="number">97</span>, <span class="number">90</span>, <span class="number">98</span>, <span class="number">90</span>, <span class="number">96</span>, <span class="number">90</span>]</span><br><span class="line">[<span class="number">27</span>, <span class="number">27</span>, <span class="number">27</span>, <span class="number">11</span>, <span class="number">15</span>, <span class="number">29</span>, <span class="number">29</span>, <span class="number">19</span>, <span class="number">15</span>, <span class="number">13</span>]</span><br></pre></td></tr></table></figure>
+
+<h2 id="datetime-模块"><a href="#datetime-模块" class="headerlink" title="datetime 模块"></a>datetime 模块</h2><p>python官方提供的日期和时间模块主要有time和datetime两个模块。time偏重于底层平台，模块中大多数函数会调用本地平台上的C链接库，因此有些函数运行的结果在不同的平台上会有所不同。datetime模块对time模块进行了封装，提供了高级API。</p>
+<p>datetime模块中提供了以下5个类：</p>
+<blockquote>
+<ol>
+<li>datetime：包含时间和日期</li>
+<li>date：只包含日期</li>
+<li>time：只包含时间</li>
+<li>timedelta：计算时间跨度</li>
+<li>tzinfo：时区信息</li>
+</ol>
+</blockquote>
+<h3 id="datetime类："><a href="#datetime类：" class="headerlink" title="datetime类："></a>datetime类：</h3><p>一个datetime对象可以表示日期和时间等信息，创建datetime对象可以使用如下构造方法;</p>
+<blockquote>
+<p>datetime.datetime(year,month,day,hour=0,minute=0,second=0,microsecond=0,tzinfo=None)</p>
+</blockquote>
+<p>其中year month day三个参数是不能省略的，tzinfo指的是时区参数，None表示不指定时区。参数的取值范围是限定的。</p>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>month</td>
+<td>1–12</td>
+</tr>
+<tr>
+<td>day</td>
+<td>1–给定年份和月份的日期最大值</td>
+</tr>
+<tr>
+<td>hour</td>
+<td>0–23</td>
+</tr>
+<tr>
+<td>minute</td>
+<td>0–59</td>
+</tr>
+<tr>
+<td>second</td>
+<td>0–59</td>
+</tr>
+<tr>
+<td>microminute</td>
+<td>0–1000000</td>
+</tr>
+</tbody></table>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line">a=datetime.datetime(<span class="number">2019</span>,<span class="number">2</span>,<span class="number">12</span>)</span><br><span class="line">print(a)</span><br><span class="line">b=datetime.datetime(<span class="number">2012</span>,<span class="number">2</span>,<span class="number">12</span>,<span class="number">2</span>,<span class="number">12</span>,<span class="number">23</span>)</span><br><span class="line">------------</span><br><span class="line"><span class="number">2019</span><span class="number">-02</span><span class="number">-12</span> <span class="number">00</span>:<span class="number">00</span>:<span class="number">00</span></span><br><span class="line"><span class="number">2012</span><span class="number">-02</span><span class="number">-12</span> <span class="number">02</span>:<span class="number">12</span>:<span class="number">23</span></span><br></pre></td></tr></table></figure>
+
+<p>如果需要获得本地时间，可以使用datetime中的一些类方法：</p>
+<blockquote>
+<p>datetime.today()：返回本地当前时间和日期</p>
+<p>datetime.now(tz=None)：返回当前本地时间和日期，如果tz为None，其作用相当于today</p>
+<p>datetime.utcnow()：返回当前<a href="https://baike.baidu.com/item/协调世界时/787659?fromtitle=UTC&fromid=5899996&fr=aladdin" target="_blank" rel="noopener">UTC</a>日期和时间</p>
+<p>datetime.fromtimestamp(timestamp,tz=None)：返回与<a href="https://baike.baidu.com/item/unix时间戳/2078227?fr=aladdin" target="_blank" rel="noopener">UNIX时间戳</a>对应的本地是日期和时间</p>
+<p>datetime.utcfromtimestamp(timestamp)：返回与UNIX时间戳对应的UTC日期和时间</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line">a=datetime.datetime.today()</span><br><span class="line">b=datetime.datetime.utcnow()</span><br><span class="line">c=datetime.datetime.fromtimestamp(<span class="number">1581658686</span>,tz=<span class="literal">None</span>)</span><br><span class="line">print(a)</span><br><span class="line">print(b)</span><br><span class="line">print(c)</span><br><span class="line">------------------</span><br><span class="line"><span class="number">2020</span><span class="number">-02</span><span class="number">-14</span> <span class="number">13</span>:<span class="number">35</span>:<span class="number">55.699281</span></span><br><span class="line"><span class="number">2020</span><span class="number">-02</span><span class="number">-14</span> <span class="number">05</span>:<span class="number">35</span>:<span class="number">55.699281</span></span><br><span class="line"><span class="number">2020</span><span class="number">-02</span><span class="number">-14</span> <span class="number">13</span>:<span class="number">38</span>:<span class="number">06</span></span><br><span class="line"><span class="comment"># 本地时区是东八区，所以比utc时间多了八个小时</span></span><br></pre></td></tr></table></figure>
+
+<p><strong><a href="https://tool.lu/timestamp/" target="_blank" rel="noopener">时间戳在线转化器</a></strong></p>
+<h3 id="date类"><a href="#date类" class="headerlink" title="date类"></a>date类</h3><blockquote>
+<p>datetime.date(year,month,day)</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line">a=datetime.date(<span class="number">2020</span>,<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">print(a)</span><br><span class="line">--------------</span><br><span class="line"><span class="number">2020</span><span class="number">-01</span><span class="number">-02</span></span><br></pre></td></tr></table></figure>
+
+<p>date中存在与datetime同样的类方法：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line">print(datetime.date.today())</span><br><span class="line">---------------</span><br><span class="line"><span class="number">2020</span><span class="number">-02</span><span class="number">-14</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="time-类"><a href="#time-类" class="headerlink" title="time 类"></a>time 类</h3><blockquote>
+<p>datetime.time(hour=0,minute=0,second=0,microsecond=0,tzinfo=None)</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line">a=datetime.time(<span class="number">12</span>,<span class="number">2</span>,<span class="number">12</span>)</span><br><span class="line">print(a)</span><br><span class="line">----------------------</span><br><span class="line"><span class="number">12</span>:<span class="number">02</span>:<span class="number">12</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>如果想要获取当天时间的某一个特定值，如day，hour等：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line">a=datetime.datetime.today()</span><br><span class="line">print(a.day)</span><br><span class="line">print(<span class="string">"%d:%d:%d"</span>%(a.hour,a.minute,a.second))</span><br><span class="line">----------------------</span><br><span class="line"><span class="number">14</span></span><br><span class="line"><span class="number">13</span>:<span class="number">53</span>:<span class="number">8</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="日期和时间计算"><a href="#日期和时间计算" class="headerlink" title="日期和时间计算"></a>日期和时间计算</h3><p>datetime.timedelta对象代表两个时间之间的时间差，两个date或datetime对象相减就可以返回一个timedelta对象。<br>如果有人问你昨天是几号，这个很容易就回答出来了。但是如果问你200天前是几号，就不是那么容易答出来。而在Python中datetime模块中的timedelta就可以很轻松给出答案。  </p>
+<blockquote>
+<p>class datetime.timedelta([days[, seconds[, microseconds[, milliseconds[, minutes[, hours[, weeks]]]]]]]) </p>
+</blockquote>
+<p>从构造函数的定义中可以看出，所有参数都是可选的，并且默认都是0。参数的值可以是整数，浮点数，正数或负数针对时间存储，timedelta内部只能存储days，seconds，microseconds，其他参数的值会自动按如下规则进行转换： </p>
+<blockquote>
+<p>1 millisecond（毫秒）-&gt; 1000 microseconds（微秒）<br>1 minute -&gt; 60 seconds<br>1 hour -&gt; 3600 seconds<br>1 week -&gt; 7 days</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line">a=datetime.datetime.now()</span><br><span class="line">print(a)</span><br><span class="line">b=datetime.timedelta(days=<span class="number">2</span>)</span><br><span class="line">print(b)</span><br><span class="line">c=datetime.timedelta(seconds=<span class="number">-2</span>)</span><br><span class="line">print(C)</span><br><span class="line">d=a+b</span><br><span class="line">e=a+c</span><br><span class="line">print(d)  <span class="comment"># 两天后的日期和时间</span></span><br><span class="line">print(e)  <span class="comment"># 两秒前的日期和时间</span></span><br><span class="line">-----------</span><br><span class="line"><span class="number">2020</span><span class="number">-02</span><span class="number">-14</span> <span class="number">14</span>:<span class="number">06</span>:<span class="number">11.287869</span></span><br><span class="line"><span class="number">2</span> days, <span class="number">0</span>:<span class="number">00</span>:<span class="number">00</span></span><br><span class="line"><span class="number">-1</span> day, <span class="number">23</span>:<span class="number">59</span>:<span class="number">58</span></span><br><span class="line"><span class="number">2020</span><span class="number">-02</span><span class="number">-16</span> <span class="number">14</span>:<span class="number">06</span>:<span class="number">11.287869</span></span><br><span class="line"><span class="number">2020</span><span class="number">-02</span><span class="number">-14</span> <span class="number">14</span>:<span class="number">06</span>:<span class="number">09.287869</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="日期和时间的格式化输出"><a href="#日期和时间的格式化输出" class="headerlink" title="日期和时间的格式化输出"></a>日期和时间的格式化输出</h3><p>python中的日期时间格式化使用strftime()方法，datetime，time，date三个类中都含有该方法。而日期时间的解析需要用到datetime.strptime(date_string,format)方法，date和time没有该方法。format表示时间格式。</p>
+<table>
+<thead>
+<tr>
+<th>格式控制符</th>
+<th>含义</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>%m</td>
+<td>两位月份表示</td>
+<td>01，10</td>
+</tr>
+<tr>
+<td>%y</td>
+<td>两位年份表示</td>
+<td>08，20</td>
+</tr>
+<tr>
+<td>%Y</td>
+<td>四位年份表示</td>
+<td>2012，2000</td>
+</tr>
+<tr>
+<td>%d</td>
+<td>月内中的一天</td>
+<td>1，10</td>
+</tr>
+<tr>
+<td>%H</td>
+<td>两位小时表示（24时）</td>
+<td>01，12</td>
+</tr>
+<tr>
+<td>%I</td>
+<td>两位小时表示（12时）</td>
+<td>01，10</td>
+</tr>
+<tr>
+<td>%p</td>
+<td>AM或PM区域性设置</td>
+<td>AM和PM</td>
+</tr>
+<tr>
+<td>%M</td>
+<td>两位分钟表示</td>
+<td>01，23</td>
+</tr>
+<tr>
+<td>%S</td>
+<td>两位秒表示</td>
+<td>01，23</td>
+</tr>
+<tr>
+<td>%f</td>
+<td>以六位数表示微妙</td>
+<td>000000</td>
+</tr>
+<tr>
+<td>%z</td>
+<td>+HHMM或-HHMM形式的UTC偏移</td>
+<td>+1010</td>
+</tr>
+<tr>
+<td>%Z</td>
+<td>时区名称</td>
+<td>UTC,EST,CST</td>
+</tr>
+</tbody></table>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line">a=datetime.datetime.today()</span><br><span class="line">print(a.strftime(<span class="string">'%Y-%m-%d %H:%M:%S'</span>))</span><br><span class="line">-----------------</span><br><span class="line"><span class="number">2020</span><span class="number">-02</span><span class="number">-14</span> <span class="number">14</span>:<span class="number">21</span>:<span class="number">13</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="时区"><a href="#时区" class="headerlink" title="时区"></a>时区</h3><blockquote>
+<p>datetime.timezone(offset,name=None)</p>
+</blockquote>
+<p>offset是UTC偏移量，+8就是东八区。name参数是时区名字，如Asia/Beijing，可省略。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> timezone,timedelta,datetime</span><br><span class="line">print(datetime.utcnow())</span><br><span class="line">a=timezone(timedelta(hours=<span class="number">8</span>))</span><br><span class="line">b= datetime.utcnow().replace(tzinfo=a)</span><br><span class="line">print(b)</span><br><span class="line">print(datetime.now())</span><br><span class="line">------------------</span><br><span class="line"><span class="number">2020</span><span class="number">-02</span><span class="number">-14</span> <span class="number">06</span>:<span class="number">44</span>:<span class="number">15.894890</span>   <span class="comment"># utc时间</span></span><br><span class="line"><span class="number">2020</span><span class="number">-02</span><span class="number">-14</span> <span class="number">06</span>:<span class="number">44</span>:<span class="number">15.932728</span>+<span class="number">08</span>:<span class="number">00</span>   </span><br><span class="line"><span class="number">2020</span><span class="number">-02</span><span class="number">-14</span> <span class="number">14</span>:<span class="number">44</span>:<span class="number">15.941387</span>   <span class="comment"># 东八区区时</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="logging日志模块"><a href="#logging日志模块" class="headerlink" title="logging日志模块"></a>logging日志模块</h2><p>在程序开发过程中，有时会需要输出一些调试信息，此时可以使用logging模块，用于输出运行日志，可以设置输出日志的等级，日志保存路径，时间等等。虽然仍有很多人使用print（）函数输出日志信息，但是无法做到分级输出，且在处理过程中也是十分麻烦。而logging模块可以通过设置不同的日志等级，在release版本中值输出重要信息，而不必显示调试信息，操作灵活。</p>
+<h3 id="日志等级："><a href="#日志等级：" class="headerlink" title="日志等级："></a>日志等级：</h3><p>logging模块提供了5种常用级别：</p>
+<table>
+<thead>
+<tr>
+<th>日志级别</th>
+<th>日志函数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>DEBUG</td>
+<td>debug()</td>
+<td>输出调试信息</td>
+</tr>
+<tr>
+<td>INFO</td>
+<td>info()</td>
+<td>输出一些关键节点信息，用于确定程序的流程</td>
+</tr>
+<tr>
+<td>WARNING</td>
+<td>warning()</td>
+<td>输出不影响程序进行的不期望的事情发生时的信息</td>
+</tr>
+<tr>
+<td>ERROR</td>
+<td>error()</td>
+<td>导致某些功能不能运行时的问题的日志信息</td>
+</tr>
+<tr>
+<td>CRITICAL</td>
+<td>critical()</td>
+<td>导致应用程序不能继续运行时的问题的日志信息</td>
+</tr>
+</tbody></table>
+<p>这5种级别从上到下依次从低到高，如果设置了DEBUG级别，debug()函数和其他级别函数的日志信息后会被输出；如果设置了ERROR级别，error()和critical()函数的日志信息会被输出。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> logging</span><br><span class="line">logging.basicConfig(level=logging.ERROR)  <span class="comment"># 设置级别为ERROR</span></span><br><span class="line">logging.debug(<span class="string">"1"</span>)</span><br><span class="line">logging.info(<span class="string">"2"</span>)</span><br><span class="line">logging.warning(<span class="string">"3"</span>)</span><br><span class="line">logging.error(<span class="string">"4"</span>)</span><br><span class="line">logging.critical(<span class="string">"5"</span>)</span><br><span class="line">-----------------------</span><br><span class="line">ERROR:root:<span class="number">4</span></span><br><span class="line">CRITICAL:root:<span class="number">5</span>   <span class="comment"># 只执行error函数和critical函数</span></span><br><span class="line">==============================</span><br><span class="line"><span class="keyword">import</span> logging</span><br><span class="line">logging.basicConfig(level=logging.DEBUG)  <span class="comment"># 设置级别为DEBUG</span></span><br><span class="line">logging.debug(<span class="string">"1"</span>)</span><br><span class="line">logging.info(<span class="string">"2"</span>)</span><br><span class="line">logging.warning(<span class="string">"3"</span>)</span><br><span class="line">logging.error(<span class="string">"4"</span>)</span><br><span class="line">logging.critical(<span class="string">"5"</span>)</span><br><span class="line">--------------------------</span><br><span class="line">DEBUG:root:<span class="number">1</span></span><br><span class="line">INFO:root:<span class="number">2</span></span><br><span class="line">WARNING:root:<span class="number">3</span></span><br><span class="line">ERROR:root:<span class="number">4</span></span><br><span class="line">CRITICAL:root:<span class="number">5</span>     <span class="comment"># 全部执行</span></span><br></pre></td></tr></table></figure>
+
+<p>在输出的日hi信息中会有root关键字，这说明进行日志输出的对象是root日志生成器（logger)。也可以使用getLogger()函数创建日志器对象。</p>
+<blockquote>
+<p>logger=logging.getLogger(_<em>name_</em>)</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> logging</span><br><span class="line">logging.basicConfig(level = logging.INFO)</span><br><span class="line">logger = logging.getLogger(__name__)</span><br><span class="line"><span class="comment"># 生成日志器对象</span></span><br><span class="line"><span class="comment"># 直接调用日志器对象中的日志函数</span></span><br><span class="line">logger.debug(<span class="string">"Do something"</span>)</span><br><span class="line">logger.info(<span class="string">"Start print log"</span>)</span><br><span class="line">logger.warning(<span class="string">"Something maybe fail."</span>)</span><br><span class="line">--------------------------</span><br><span class="line">INFO:__main__:Start <span class="keyword">print</span> log</span><br><span class="line">WARNING:__main__:Something maybe fail.</span><br></pre></td></tr></table></figure>
+
+<h3 id="日志格式化输出："><a href="#日志格式化输出：" class="headerlink" title="日志格式化输出："></a>日志格式化输出：</h3><font color=green>
+
+<p>%(name)s：日志器名</p>
+<p>%(levelno)s：打印日志级别的数值</p>
+<p> %(levelname)s：打印日志级别的名称</p>
+<p> %(pathname)s：打印当前执行程序的路径，其实就是sys.argv[0]</p>
+<p> %(filename)s：打印当前执行程序名（包括路径） </p>
+<p>%(funcName)s：打印日志的当前函数 名</p>
+<p>%(lineno)d：打印日志的当前行号 </p>
+<p>%(asctime)s：打印日志的时间 </p>
+<p>%(thread)d：打印线程ID</p>
+<p> %(threadName)s：打印线程名称</p>
+<p> %(process)d：打印进程ID</p>
+<p>%(processName)s：打印进程名</p>
+<p> %(message)s：打印日志信息</p>
+</font>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> logging</span><br><span class="line">logging.basicConfig(level=logging.DEBUG,format=<span class="string">'%(asctime)s--%(name)s--%(filename)s--%(levelname)s--%(message)s'</span>)</span><br><span class="line">logger=logging.getLogger(__name__)</span><br><span class="line">logger.debug(<span class="string">"1"</span>)</span><br><span class="line">logger.info(<span class="string">"2"</span>)</span><br><span class="line">logger.warning(<span class="string">"3"</span>)</span><br><span class="line">logger.error(<span class="string">"4"</span>)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hi</span><span class="params">()</span>:</span></span><br><span class="line">    logger.critical(<span class="string">"5"</span>)</span><br><span class="line">hi()</span><br><span class="line">-----------------------</span><br><span class="line"><span class="number">2020</span><span class="number">-02</span><span class="number">-15</span> <span class="number">11</span>:<span class="number">23</span>:<span class="number">38</span>,<span class="number">394</span>--__main__--mian.py--DEBUG-<span class="number">-1</span></span><br><span class="line"><span class="number">2020</span><span class="number">-02</span><span class="number">-15</span> <span class="number">11</span>:<span class="number">23</span>:<span class="number">38</span>,<span class="number">432</span>--__main__--mian.py--INFO-<span class="number">-2</span></span><br><span class="line"><span class="number">2020</span><span class="number">-02</span><span class="number">-15</span> <span class="number">11</span>:<span class="number">23</span>:<span class="number">38</span>,<span class="number">458</span>--__main__--mian.py--WARNING-<span class="number">-3</span></span><br><span class="line"><span class="number">2020</span><span class="number">-02</span><span class="number">-15</span> <span class="number">11</span>:<span class="number">23</span>:<span class="number">38</span>,<span class="number">472</span>--__main__--mian.py--ERROR-<span class="number">-4</span></span><br><span class="line"><span class="number">2020</span><span class="number">-02</span><span class="number">-15</span> <span class="number">11</span>:<span class="number">23</span>:<span class="number">38</span>,<span class="number">481</span>--__main__--mian.py--CRITICAL-<span class="number">-5</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="日志输出："><a href="#日志输出：" class="headerlink" title="日志输出："></a>日志输出：</h3><p>日志信息默认输出到控制台，也可以将日志信息输出到日志文件中，或者网络中的其他计算机。</p>
+<h4 id="输出到日志文件中："><a href="#输出到日志文件中：" class="headerlink" title="输出到日志文件中："></a>输出到日志文件中：</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> logging</span><br><span class="line">logging.basicConfig(level=logging.INFO,format=<span class="string">'%(asctime)s--%(name)s--%(levelname)s--%(message)s'</span>,filename=<span class="string">'test1.txt'</span>,filemode=<span class="string">'a'</span>)</span><br><span class="line">logger=logging.getLogger(__name__)</span><br><span class="line">logger.debug(<span class="string">"1"</span>)</span><br><span class="line">logger.info(<span class="string">"2"</span>)</span><br><span class="line">logger.warning(<span class="string">"3"</span>)</span><br><span class="line">logger.error(<span class="string">"4"</span>)</span><br><span class="line">logger.critical(<span class="string">"5"</span>)</span><br><span class="line">------------------</span><br><span class="line"><span class="comment"># filename：指定日志文件名，后接的文件名必须是当前目录下存在的文件名，如果存在，就会将日志信息存入其中，而不会输出到控制台</span></span><br><span class="line"><span class="comment">#filemode:有w和a，w就是写模式，每次都会重新写日志，覆盖之前的日志;a是追加模式，默认如果不写的话，就是追加模式.</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="将日志同时输出到屏幕和日志文件："><a href="#将日志同时输出到屏幕和日志文件：" class="headerlink" title="将日志同时输出到屏幕和日志文件："></a>将日志同时输出到屏幕和日志文件：</h4><p>logging库采取了模块化的设计，提供了许多组件：记录器、处理器、过滤器和格式化器。</p>
+<ul>
+<li>Logger 暴露了应用程序代码能直接使用的接口。</li>
+<li>Handler将（记录器产生的）日志记录发送至合适的目的地。</li>
+<li>Filter提供了更好的粒度控制，它可以决定输出哪些日志记录。</li>
+<li>Formatter 指明了最终输出中日志记录的布局。</li>
+</ul>
+<p><strong>Loggers</strong>:</p>
+<p>Logger 对象要做三件事情。首先，它们向应用代码暴露了许多方法，这样应用可以在运行时记录消息。其次，记录器对象通过严重程度（默认的过滤设施）或者过滤器对象来决定哪些日志消息需要记录下来。第三，记录器对象将相关的日志消息传递给所有感兴趣的日志处理器。</p>
+<p>常用的记录器对象的方法分为两类：配置和发送消息。</p>
+<p>这些是最常用的配置方法：</p>
+<p>Logger.setLevel()指定logger将会处理的最低的安全等级日志信息。<br>Logger.addHandler()和Logger.removeHandler()从记录器对象中添加和删除处理程序对象。处理器详见Handlers。<br>Logger.addFilter()和Logger.removeFilter()从记录器对象添加和删除过滤器对象。</p>
+<p><strong>handlers</strong>:</p>
+<p>处理程序对象负责将适当的日志消息（基于日志消息的严重性）分派到处理程序的指定目标。</p>
+<p><code>Logger</code> 对象可以通过<code>addHandler()</code>方法增加零个或多个handler对象。举个例子，一个应用可以将所有的日志消息发送至日志文件，所有的错误级别（error）及以上的日志消息发送至标准输出，所有的严重级别（critical）日志消息发送至某个电子邮箱。在这个例子中需要三个独立的处理器，每一个负责将特定级别的消息发送至特定的位置。</p>
+<p><strong>1)   logging.StreamHandler -&gt; 控制台输出</strong><br>使用这个Handler可以向类似与sys.stdout或者sys.stderr的任何文件对象(file object)输出信息。</p>
+<p>它的构造函数是：</p>
+<blockquote>
+<p>StreamHandler([strm])<br>其中strm参数是一个文件对象。默认是sys.stderr</p>
+</blockquote>
+<p><strong>2）logging.FileHandler -&gt; 文件输出</strong></p>
+<p>和StreamHandler类似，用于向一个文件输出日志信息。不过FileHandler会帮你打开这个文件。它的构造函数是：</p>
+<blockquote>
+<p>FileHandler(filename[,mode])<br>filename是文件名，必须指定一个文件名。<br>mode是文件的打开方式。默认是’a’，即添加到文件末尾。</p>
+</blockquote>
+<p>在logger中添加StreamHandler，可以将日志输出到屏幕上。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> logging</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_logger</span><span class="params">()</span>:</span></span><br><span class="line">	logger=logging.getLogger(__name__)</span><br><span class="line">    <span class="comment"># 创建对象</span></span><br><span class="line">	file=logging.FileHandler(<span class="string">"test1.txt"</span>)</span><br><span class="line">    <span class="comment"># 设置日志文件</span></span><br><span class="line">	screen=logging.StreamHandler()</span><br><span class="line">    <span class="comment"># 设置屏幕输出</span></span><br><span class="line">	formatter=logging.Formatter(<span class="string">'%(asctime)s - %(name)s - %(levelname)s - %(message)s'</span>)</span><br><span class="line">    <span class="comment"># 设置格式</span></span><br><span class="line">	file.setFormatter(formatter)</span><br><span class="line">    <span class="comment"># 添加日志文件存储格式</span></span><br><span class="line">	screen.setFormatter(formatter)</span><br><span class="line">    <span class="comment"># 添加屏幕输出格式</span></span><br><span class="line">	logger.addHandler(file)</span><br><span class="line">    <span class="comment"># 日志器添加到文件中</span></span><br><span class="line">	logger.addHandler(screen)</span><br><span class="line">    <span class="comment"># 日志器输出到屏幕</span></span><br><span class="line">	logger.setLevel(logging.DEBUG)</span><br><span class="line">    <span class="comment"># 设置级别</span></span><br><span class="line">    <span class="keyword">return</span> logger</span><br><span class="line">real_logger=get_logger()</span><br><span class="line">real_logger.debug(<span class="string">"1"</span>)</span><br><span class="line">real_logger.info(<span class="string">"2"</span>)</span><br><span class="line">real_logger.warning(<span class="string">"3"</span>)</span><br><span class="line">real_logger.error(<span class="string">"4"</span>)</span><br><span class="line">real_logger.critical(<span class="string">"5"</span>)</span><br><span class="line">-----------------</span><br><span class="line"><span class="number">2020</span><span class="number">-02</span><span class="number">-15</span> <span class="number">15</span>:<span class="number">34</span>:<span class="number">45</span>,<span class="number">391</span> - __main__ - DEBUG - <span class="number">1</span></span><br><span class="line"><span class="number">2020</span><span class="number">-02</span><span class="number">-15</span> <span class="number">15</span>:<span class="number">34</span>:<span class="number">45</span>,<span class="number">418</span> - __main__ - INFO - <span class="number">2</span></span><br><span class="line"><span class="number">2020</span><span class="number">-02</span><span class="number">-15</span> <span class="number">15</span>:<span class="number">34</span>:<span class="number">45</span>,<span class="number">424</span> - __main__ - WARNING - <span class="number">3</span></span><br><span class="line"><span class="number">2020</span><span class="number">-02</span><span class="number">-15</span> <span class="number">15</span>:<span class="number">34</span>:<span class="number">45</span>,<span class="number">428</span> - __main__ - ERROR - <span class="number">4</span></span><br><span class="line"><span class="number">2020</span><span class="number">-02</span><span class="number">-15</span> <span class="number">15</span>:<span class="number">34</span>:<span class="number">45</span>,<span class="number">432</span> - __main__ - CRITICAL - <span class="number">5</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="hashlib加密模块"><a href="#hashlib加密模块" class="headerlink" title="hashlib加密模块"></a>hashlib加密模块</h2><p>hashlib主要提供字符加密功能，将md5和sha模块整合到了一起，支持md5,sha1, sha224, sha256, sha384, sha512等算法。</p>
+<p>此外哈希算法是一个的单向函数，无法进行反推。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"></span><br><span class="line"><span class="comment"># md5</span></span><br><span class="line"></span><br><span class="line">string = <span class="string">"pigz"</span>    <span class="comment"># 被加密的内容</span></span><br><span class="line"></span><br><span class="line">md5 = hashlib.md5()             <span class="comment"># 构造一个hashlib的对象</span></span><br><span class="line">md5.update(string.encode(<span class="string">'utf-8'</span>))     <span class="comment"># 注意转码</span></span><br><span class="line">result = md5.hexdigest()         <span class="comment"># 返回加密结果</span></span><br><span class="line">print(<span class="string">"md5加密结果:"</span>,result)</span><br><span class="line"></span><br><span class="line"><span class="comment"># sha1</span></span><br><span class="line"></span><br><span class="line">sha1 = hashlib.sha1()</span><br><span class="line">sha1.update(string.encode(<span class="string">'utf-8'</span>))</span><br><span class="line">result = sha1.hexdigest()</span><br><span class="line">print(<span class="string">"sha1加密结果:"</span>,result)</span><br><span class="line"></span><br><span class="line"><span class="comment"># sha256</span></span><br><span class="line"></span><br><span class="line">sha256 = hashlib.sha256()</span><br><span class="line">sha256.update(string.encode(<span class="string">'utf-8'</span>))</span><br><span class="line">result = sha256.hexdigest()</span><br><span class="line">print(<span class="string">"sha256加密结果:"</span>,result)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># sha384</span></span><br><span class="line"></span><br><span class="line">sha384 = hashlib.sha384()</span><br><span class="line">sha384.update(string.encode(<span class="string">'utf-8'</span>))</span><br><span class="line">result = sha384.hexdigest()</span><br><span class="line">print(<span class="string">"sha384加密结果:"</span>,result)</span><br><span class="line"></span><br><span class="line"><span class="comment"># sha512</span></span><br><span class="line"></span><br><span class="line">sha512= hashlib.sha512()</span><br><span class="line">sha512.update(string.encode(<span class="string">'utf-8'</span>))</span><br><span class="line">result = sha512.hexdigest()</span><br><span class="line">print(<span class="string">"sha512加密结果:"</span>,result)</span><br><span class="line">-----------------------------</span><br><span class="line">md5加密结果: fd562ded6a5b4de5648bec473dd4f604</span><br><span class="line">sha1加密结果: c41ee49bfc2828d0b232d8c858d2a77df54c7d93</span><br><span class="line">sha256加密结果: <span class="number">883642e660</span>d2ef545d3d9f0cbd12790a99aea6358fb67c46664ff22fefa8b7df</span><br><span class="line">sha384加密结果: a9f38c52370c93b2fdd58cdbdfa9ea142a532f0f521d415971692c7471bd63a9acf375d093b54b226e9efa28fcab6b47</span><br><span class="line">sha512加密结果: ad87dfea4f697782cc80149893a7fd9a3c6d39dfbea8173b5a3423b71e5dd2efe30c911208cfaa01a259df7046bcf003491c5615512e1194f2ecf277178880ff</span><br></pre></td></tr></table></figure>
+
+<p>加密可以重复加密，hash.update(arg) 更新哈希对象以字符串参数, 注意：如果同一个hash对象重复调用该方法，则m.update(a); m.update(b) 等效于 m.update(a+b）。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line">m = hashlib.md5()</span><br><span class="line">m.update(<span class="string">'pig'</span>.encode(<span class="string">'utf-8'</span>))</span><br><span class="line">res = m.hexdigest()</span><br><span class="line">print(<span class="string">"第一次pig加密:"</span>,res)</span><br><span class="line"></span><br><span class="line">m.update(<span class="string">'z'</span>.encode(<span class="string">'utf-8'</span>))</span><br><span class="line">res = m.hexdigest()</span><br><span class="line">print(<span class="string">"第二次z加密:"</span>,res)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">m1 = hashlib.md5()</span><br><span class="line">m1.update(<span class="string">'z'</span>.encode(<span class="string">'utf-8'</span>))</span><br><span class="line">res = m1.hexdigest()</span><br><span class="line">print(<span class="string">"z单独加密:"</span>,res)</span><br><span class="line"></span><br><span class="line">m2 = hashlib.md5()</span><br><span class="line">m2.update(<span class="string">'pigz'</span>.encode(<span class="string">'utf-8'</span>))</span><br><span class="line">res = m2.hexdigest()</span><br><span class="line">print(<span class="string">"pigz单独加密:"</span>,res)</span><br><span class="line"></span><br><span class="line">----------------------</span><br><span class="line">第一次pig加密: f74c6af46a78becb2f1bd3f95bbd5858</span><br><span class="line">第二次z加密: fd562ded6a5b4de5648bec473dd4f604</span><br><span class="line">z单独加密: fbade9e36a3f36d3d676c1b808451dd7</span><br><span class="line">pigz单独加密: fd562ded6a5b4de5648bec473dd4f604</span><br></pre></td></tr></table></figure>
+
+<p>以上加密算法虽然依然非常厉害，但时候存在缺陷，即：通过撞库可以反解。所以，有必要对加密算法中添加自定义key再来做加密。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line">m = hashlib.md5()</span><br><span class="line">m.update(<span class="string">'pig'</span>.encode(<span class="string">'utf-8'</span>))</span><br><span class="line">res = m.hexdigest()</span><br><span class="line">print(<span class="string">"第一次pig加密:"</span>,res)</span><br><span class="line"></span><br><span class="line">m1=hashlib.md5(<span class="string">'123'</span>.encode(<span class="string">'utf-8'</span>))  </span><br><span class="line"><span class="comment"># 在创建md5对象时加入key：'123'.encode('utf-8')</span></span><br><span class="line">m1.update(<span class="string">'pig'</span>.encode(<span class="string">'utf-8'</span>))</span><br><span class="line">res = m1.hexdigest()</span><br><span class="line">print(<span class="string">"第二次pig加密:"</span>,res)</span><br><span class="line">------------</span><br><span class="line">第一次pig加密: f74c6af46a78becb2f1bd3f95bbd5858</span><br><span class="line">第二次pig加密: d2a28707542ecfdc9f2a8d98232afe29</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>运用hashlib加密制作保护密码</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line">per=[]</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">secret_md5</span><span class="params">(num)</span>:</span></span><br><span class="line">    x=hashlib.md5(<span class="string">"pigz"</span>.encode(<span class="string">'utf-8'</span>))</span><br><span class="line">    x.update(num.encode(<span class="string">'utf-8'</span>))</span><br><span class="line">    <span class="keyword">return</span> x.hexdigest()</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">register</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">"用户注册"</span>)</span><br><span class="line">    name=input(<span class="string">"请输入用户名："</span>)</span><br><span class="line">    pas=input(<span class="string">"请输入密码："</span>)</span><br><span class="line">    sam=&#123;<span class="string">"name"</span>:name,<span class="string">"password"</span>:secret_md5(pas)&#125;</span><br><span class="line">    per.append(sam)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">load</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">"用户登录"</span>)</span><br><span class="line">    name=input(<span class="string">"请输入用户名："</span>)</span><br><span class="line">    pas=input(<span class="string">"请输入登录密码："</span>)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> per:</span><br><span class="line">        <span class="keyword">if</span> i[<span class="string">'name'</span>]==name <span class="keyword">and</span> i[<span class="string">'password'</span>]==secret_md5(pas):</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">    </span><br><span class="line">register()</span><br><span class="line">resu=load()</span><br><span class="line"><span class="keyword">if</span> resu:</span><br><span class="line">    print(<span class="string">"登陆成功"</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">"登陆失败"</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+  </entry>
+  <entry>
     <title>面向对象</title>
     <url>/2020/02/14/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</url>
     <content><![CDATA[<h1 id="面向对象编程"><a href="#面向对象编程" class="headerlink" title="面向对象编程"></a>面向对象编程</h1><ul>
