@@ -79,19 +79,17 @@
 
 
 
-<meta name="description" content="python语法基础">
+<meta name="description" content="过滤，选取有用的文本内容 校验密码 检测输入网址 检测日期 移除注释 匹配HTML前后标签">
 <meta property="og:type" content="article">
-<meta property="og:title" content="语法基础">
-<meta property="og:url" content="http://yoursite.com/2020/02/08/%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:title" content="正则表达式的常用功能">
+<meta property="og:url" content="http://yoursite.com/2020/02/21/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E5%B8%B8%E7%94%A8%E5%8A%9F%E8%83%BD/index.html">
 <meta property="og:site_name" content="B-BloG-G">
-<meta property="og:description" content="python语法基础">
+<meta property="og:description" content="过滤，选取有用的文本内容 校验密码 检测输入网址 检测日期 移除注释 匹配HTML前后标签">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://i2.tiimg.com/707416/b80e066b9692d2fe.png">
-<meta property="article:published_time" content="2020-02-08T13:14:25.484Z">
-<meta property="article:modified_time" content="2020-02-08T13:14:25.484Z">
+<meta property="article:published_time" content="2020-02-21T06:51:36.095Z">
+<meta property="article:modified_time" content="2020-02-21T06:51:36.095Z">
 <meta property="article:author" content="PIGZ">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://i2.tiimg.com/707416/b80e066b9692d2fe.png">
 
 
 
@@ -121,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/02/08/语法基础/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/02/21/正则表达式的常用功能/"/>
 
 
 
 
 
-  <title>语法基础 | B-BloG-G</title>
+  <title>正则表达式的常用功能 | B-BloG-G</title>
   
 
 
@@ -270,7 +268,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/08/%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/21/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E5%B8%B8%E7%94%A8%E5%8A%9F%E8%83%BD/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="PIGZ">
@@ -287,7 +285,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">语法基础</h1>
+          <h1 class="post-title" itemprop="name headline">正则表达式的常用功能</h1>
         
 
         <div class="post-meta">
@@ -299,8 +297,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-08T21:14:25+08:00">
-                2020-02-08
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-21T14:51:36+08:00">
+                2020-02-21
               </time>
             
 
@@ -360,25 +358,59 @@
       
 
       
-        <h2 id="python语法基础"><a href="#python语法基础" class="headerlink" title="python语法基础"></a>python语法基础</h2><a id="more"></a>
-<h4 id="标识符："><a href="#标识符：" class="headerlink" title="标识符："></a>标识符：</h4><p>标识符就是变量，常量，函数等等的命名，有着一些规范要求：</p>
-<ol>
-<li>区分大小写</li>
-<li>首字符不能是数字</li>
-<li>关键字不能作为标识符</li>
-<li>不能使用内部函数作为标识符</li>
-</ol>
-<p><strong>关键字</strong><img src="http://i2.tiimg.com/707416/b80e066b9692d2fe.png" alt="Markdown"></p>
-<h4 id="注释："><a href="#注释：" class="headerlink" title="注释："></a>注释：</h4><p>Python的注释使用符号 #，#位于注释行的开头，#与要注释行首字符之间要有一个空格。例如：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># print("hi")</span></span><br></pre></td></tr></table></figure>
-<p>另：在PyCharm和Sublim Text工具中，注释可以使用快捷键：选择一行或者多行代码，然后按住<kbd>Ctrl+斜杠</kbd>进行注释，去除注释也可以这样。</p>
-<h4 id="语句："><a href="#语句：" class="headerlink" title="语句："></a>语句：</h4><p>语句是代码的执行过程。在语句结束后不需要加上分号等其他符号，且python的语句书写规范十分严格。在冒号的下一行书写时一定要有<kbd>Tab</kbd>的位置等等。python的语句执行也是按照语句的缩进格式进行判断的<br>例如：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> a&gt;b:</span><br><span class="line">(Tab )print(a)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">(Tab )print(b)<span class="comment"># 在判断时执行</span></span><br><span class="line">print(<span class="string">"Da"</span>)<span class="comment"># 出了判断语句if后执行</span></span><br><span class="line">--------------------</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hi</span><span class="params">()</span>:</span></span><br><span class="line">(Tab )print(<span class="string">"A"</span>)</span><br></pre></td></tr></table></figure>
-<h4 id="模块："><a href="#模块：" class="headerlink" title="模块："></a>模块：</h4><p>python中一个模块就是一个文件，模块是保存代码的最小单位，模块中可以申明变量，常量，函数等等。一个模块也可提供访问另一个模块的元素。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">模块一 h1.py</span><br><span class="line">z=<span class="number">1</span></span><br><span class="line">y=<span class="number">2</span></span><br><span class="line">print(y)</span><br><span class="line">----------------------</span><br><span class="line">模块二 h2.py</span><br><span class="line"><span class="keyword">from</span> h1 <span class="keyword">import</span> z</span><br><span class="line">print(z)<span class="comment"># 访问模块一的参数z</span></span><br></pre></td></tr></table></figure>
-<p>如果要访问其他模块，需要用到<strong>import+&lt;模块名/文件名&gt;</strong>，如果单单引用一个元素或者函数可以用<strong>from &lt;模块名/文件名&gt; import &lt;元素/函数名&gt;</strong></p>
-<h4 id="包："><a href="#包：" class="headerlink" title="包："></a>包：</h4><p>由于命名的限制，同一个文件夹中的文件名不能重复，我们可以通过使用<strong>包</strong>来避免模块名重复的问题。通俗来说<strong>包</strong>就是一个文件夹加上一个<strong>init</strong>.py文件。推荐使用PyCharm来创建，具体步骤：使用pychram打开创建的项目，右击项目选择<strong>New-&gt;Python Package菜单</strong>，在弹出的对话框中输入包名“com.pkg”。如果要导入包中的模块，可以使用<strong>import &lt;包名.模块名&gt;</strong>，也可以添加from来引出特定元素或者函数。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> com.pkg.h1</span><br><span class="line">print(h1.z)</span><br></pre></td></tr></table></figure>
+        <blockquote>
+<p>过滤，选取有用的文本内容</p>
+<p>校验密码</p>
+<p>检测输入网址</p>
+<p>检测日期</p>
+<p>移除注释</p>
+<p>匹配HTML前后标签</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="1-过滤，选取有用的文本信息"><a href="#1-过滤，选取有用的文本信息" class="headerlink" title="1.过滤，选取有用的文本信息"></a>1.过滤，选取有用的文本信息</h2><p>如果想要选取所有数字信息：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">test=input()</span><br><span class="line">x=<span class="string">r'\d+'</span></span><br><span class="line">out=re.finditer(x,test)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> out:</span><br><span class="line">    print(i)</span><br></pre></td></tr></table></figure>
+
+<p>如果想要获取所有网址信息：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">test=input()</span><br><span class="line">x=<span class="string">r'https.+\w*com'</span></span><br><span class="line">out=re.finditer(x,test)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> out:</span><br><span class="line">    print(i.group())</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="2-校验密码"><a href="#2-校验密码" class="headerlink" title="2. 校验密码"></a>2. 校验密码</h2><p>如果想要校验密码，要求是包含数字，大小写字母，可以使用特殊字符，长度为6-12：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">test=input(<span class="string">"请输入密码："</span>)</span><br><span class="line">a=<span class="string">r'(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[\S]&#123;6,12&#125;'</span></span><br><span class="line">out=re.search(a,test)</span><br><span class="line"><span class="keyword">if</span> out==<span class="literal">None</span>:</span><br><span class="line">    print(<span class="string">'NO'</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">"OK"</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="3-检测输入网址"><a href="#3-检测输入网址" class="headerlink" title="3. 检测输入网址"></a>3. 检测输入网址</h2><p>要求格式：</p>
+<blockquote>
+<p><a href="https://www.xxx.com" target="_blank" rel="noopener">https://www.xxx.com</a></p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">test=input(<span class="string">"请输入网址："</span>)</span><br><span class="line">a=<span class="string">r'https://w&#123;3&#125;\..+\.com'</span></span><br><span class="line">m=re.match(a,test)</span><br><span class="line"><span class="keyword">if</span> m==<span class="literal">None</span>:</span><br><span class="line">    print(<span class="string">'no'</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">"OK"</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="4-检测日期"><a href="#4-检测日期" class="headerlink" title="4. 检测日期"></a>4. 检测日期</h2><p>要求日期格式：</p>
+<blockquote>
+<p>yyyy-mm-dd  </p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">test=input(<span class="string">"请输入日期："</span>)</span><br><span class="line">a=<span class="string">r'\d&#123;4&#125;-\d&#123;2&#125;-\d&#123;2&#125;'</span></span><br><span class="line">m=re.match(a,test)</span><br><span class="line"><span class="keyword">if</span> m==<span class="literal">None</span>:</span><br><span class="line">    print(<span class="string">'no'</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">'ok'</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="5-移除注释"><a href="#5-移除注释" class="headerlink" title="5. 移除注释"></a>5. 移除注释</h2><p>注释类型：</p>
+<blockquote>
+<p> # 。。。。。。</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">test=input(<span class="string">"请输入："</span>)</span><br><span class="line">a=<span class="string">r'#.+'</span></span><br><span class="line">out=re.sub(a,<span class="string">''</span>,test)</span><br><span class="line">print(out)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="6-匹配HTML前后标签"><a href="#6-匹配HTML前后标签" class="headerlink" title="6. 匹配HTML前后标签"></a>6. 匹配HTML前后标签</h2><p>要求前后一致</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">test=input(<span class="string">"请输入："</span>)</span><br><span class="line">a=<span class="string">r'&lt;(.+)&gt;.+&lt;\1&gt;</span></span><br><span class="line"><span class="string">out=re.match(a,test)</span></span><br><span class="line"><span class="string">print(out)</span></span><br></pre></td></tr></table></figure>
+
+
+
+
       
     </div>
     
@@ -402,8 +434,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/02/08/python%E7%AE%80%E4%BB%8B/" rel="next" title="python简介">
-                <i class="fa fa-chevron-left"></i> python简介
+              <a href="/2020/02/20/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="next" title="正则表达式">
+                <i class="fa fa-chevron-left"></i> 正则表达式
               </a>
             
           </div>
@@ -411,10 +443,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/02/08/%E6%95%B0%E6%8D%AE/" rel="prev" title="数据">
-                数据 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -550,7 +578,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#python语法基础"><span class="nav-number">1.</span> <span class="nav-text">python语法基础</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#标识符："><span class="nav-number">1.0.1.</span> <span class="nav-text">标识符：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#注释："><span class="nav-number">1.0.2.</span> <span class="nav-text">注释：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#语句："><span class="nav-number">1.0.3.</span> <span class="nav-text">语句：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#模块："><span class="nav-number">1.0.4.</span> <span class="nav-text">模块：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#包："><span class="nav-number">1.0.5.</span> <span class="nav-text">包：</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-过滤，选取有用的文本信息"><span class="nav-number">1.</span> <span class="nav-text">1.过滤，选取有用的文本信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-校验密码"><span class="nav-number">2.</span> <span class="nav-text">2. 校验密码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-检测输入网址"><span class="nav-number">3.</span> <span class="nav-text">3. 检测输入网址</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-检测日期"><span class="nav-number">4.</span> <span class="nav-text">4. 检测日期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-移除注释"><span class="nav-number">5.</span> <span class="nav-text">5. 移除注释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-匹配HTML前后标签"><span class="nav-number">6.</span> <span class="nav-text">6. 匹配HTML前后标签</span></a></li></ol></div>
             
 
           </div>

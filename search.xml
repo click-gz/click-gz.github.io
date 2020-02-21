@@ -1,6 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>正则表达式的常用功能</title>
+    <url>/2020/02/21/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E5%B8%B8%E7%94%A8%E5%8A%9F%E8%83%BD/</url>
+    <content><![CDATA[<blockquote>
+<p>过滤，选取有用的文本内容</p>
+<p>校验密码</p>
+<p>检测输入网址</p>
+<p>检测日期</p>
+<p>移除注释</p>
+<p>匹配HTML前后标签</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="1-过滤，选取有用的文本信息"><a href="#1-过滤，选取有用的文本信息" class="headerlink" title="1.过滤，选取有用的文本信息"></a>1.过滤，选取有用的文本信息</h2><p>如果想要选取所有数字信息：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">test=input()</span><br><span class="line">x=<span class="string">r'\d+'</span></span><br><span class="line">out=re.finditer(x,test)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> out:</span><br><span class="line">    print(i)</span><br></pre></td></tr></table></figure>
+
+<p>如果想要获取所有网址信息：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">test=input()</span><br><span class="line">x=<span class="string">r'https.+\w*com'</span></span><br><span class="line">out=re.finditer(x,test)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> out:</span><br><span class="line">    print(i.group())</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="2-校验密码"><a href="#2-校验密码" class="headerlink" title="2. 校验密码"></a>2. 校验密码</h2><p>如果想要校验密码，要求是包含数字，大小写字母，可以使用特殊字符，长度为6-12：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">test=input(<span class="string">"请输入密码："</span>)</span><br><span class="line">a=<span class="string">r'(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[\S]&#123;6,12&#125;'</span></span><br><span class="line">out=re.search(a,test)</span><br><span class="line"><span class="keyword">if</span> out==<span class="literal">None</span>:</span><br><span class="line">    print(<span class="string">'NO'</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">"OK"</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="3-检测输入网址"><a href="#3-检测输入网址" class="headerlink" title="3. 检测输入网址"></a>3. 检测输入网址</h2><p>要求格式：</p>
+<blockquote>
+<p><a href="https://www.xxx.com" target="_blank" rel="noopener">https://www.xxx.com</a></p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">test=input(<span class="string">"请输入网址："</span>)</span><br><span class="line">a=<span class="string">r'https://w&#123;3&#125;\..+\.com'</span></span><br><span class="line">m=re.match(a,test)</span><br><span class="line"><span class="keyword">if</span> m==<span class="literal">None</span>:</span><br><span class="line">    print(<span class="string">'no'</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">"OK"</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="4-检测日期"><a href="#4-检测日期" class="headerlink" title="4. 检测日期"></a>4. 检测日期</h2><p>要求日期格式：</p>
+<blockquote>
+<p>yyyy-mm-dd  </p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">test=input(<span class="string">"请输入日期："</span>)</span><br><span class="line">a=<span class="string">r'\d&#123;4&#125;-\d&#123;2&#125;-\d&#123;2&#125;'</span></span><br><span class="line">m=re.match(a,test)</span><br><span class="line"><span class="keyword">if</span> m==<span class="literal">None</span>:</span><br><span class="line">    print(<span class="string">'no'</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">'ok'</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="5-移除注释"><a href="#5-移除注释" class="headerlink" title="5. 移除注释"></a>5. 移除注释</h2><p>注释类型：</p>
+<blockquote>
+<p> # 。。。。。。</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">test=input(<span class="string">"请输入："</span>)</span><br><span class="line">a=<span class="string">r'#.+'</span></span><br><span class="line">out=re.sub(a,<span class="string">''</span>,test)</span><br><span class="line">print(out)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="6-匹配HTML前后标签"><a href="#6-匹配HTML前后标签" class="headerlink" title="6. 匹配HTML前后标签"></a>6. 匹配HTML前后标签</h2><p>要求前后一致</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">test=input(<span class="string">"请输入："</span>)</span><br><span class="line">a=<span class="string">r'&lt;(.+)&gt;.+&lt;\1&gt;</span></span><br><span class="line"><span class="string">out=re.match(a,test)</span></span><br><span class="line"><span class="string">print(out)</span></span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+  </entry>
+  <entry>
     <title>正则表达式</title>
     <url>/2020/02/20/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</url>
     <content><![CDATA[<h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h2><p><strong><a href="https://baike.baidu.com/item/正则表达式/1700215?fr=aladdin" target="_blank" rel="noopener">网络介绍(正则表达式)</a></strong></p>
@@ -1439,6 +1499,35 @@
 <li>面向对象的基本特征–多态性</li>
 <li>Pthon根类–object</li>
 <li>枚举类</li>
+</ul>
+</li>
+<li>异常处理：<ul>
+<li>异常问题</li>
+<li>捕获异常</li>
+<li>释放资源</li>
+<li>自定义异常/显示抛出异常</li>
+</ul>
+</li>
+<li>常用模块：<ul>
+<li>math模块</li>
+<li>random模块</li>
+<li>datetime模块</li>
+<li>logging模块</li>
+<li>hashlib加密模块</li>
+</ul>
+</li>
+<li>正则表达式：<ul>
+<li>字符串</li>
+<li>元字符</li>
+<li>量词</li>
+<li>分词</li>
+<li>re模块</li>
+</ul>
+</li>
+<li>正则表达式常用功能</li>
+<li>python文件：<ul>
+<li>文件操作</li>
+<li>os模块</li>
 </ul>
 </li>
 </ol>
