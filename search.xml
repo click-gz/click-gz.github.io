@@ -1,6 +1,387 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>python文件</title>
+    <url>/2020/03/03/python%E6%96%87%E4%BB%B6/</url>
+    <content><![CDATA[<h1 id="python-文件"><a href="#python-文件" class="headerlink" title="python 文件"></a>python 文件</h1><a id="more"></a>
+
+<h2 id="文件操作："><a href="#文件操作：" class="headerlink" title="文件操作："></a>文件操作：</h2><h3 id="打开文件："><a href="#打开文件：" class="headerlink" title="打开文件："></a>打开文件：</h3><p>打开文件需要用到open()函数：</p>
+<blockquote>
+<p>open(name [, mode] [, buffering] [,encoding=None] [,errors=None,] [,newline=None] [,closefd=True] [,opener=None]) </p>
+<ol>
+<li>其中name表示要打开的文件，既可以是相对路径也可以是绝对路径；</li>
+<li>mode用来设置文件打开的方式；</li>
+<li>buffering是设置缓冲区策略，默认值是-1，当buffering的值为-1时，缓冲区会自动设置为4096或8192字节；当buffering的值为0时，则表示关闭缓冲区，关闭缓冲区后，数据直接写入文件中，主要用于二进制文件的写入；当buffering&gt;0时，用来调节缓冲区的大小</li>
+<li>encoding是指用来打开文件的编码，主要用于文本文件；</li>
+<li>errors是表示编码错误时，采取的措施；</li>
+<li>newline用来设置换行模式；</li>
+<li>closefd为True时，可调用close()关闭文件，同时也会文件描述符所对应的文件；closefd为False时，不会关闭文件描述符对应的文件；</li>
+<li>opener用于打开文件的一些操作，会返回一个文件描述符</li>
+</ol>
+</blockquote>
+<p><strong>打开文件的mode列表：</strong></p>
+<table class="reference">
+<tbody><tr><th style="width:10%">模式</th><th>描述</th></tr>
+<tr><td>t</td><td>文本模式 (默认)。</td></tr>
+<tr><td>x</td><td>写模式，新建一个文件，如果该文件已存在则会报错。</td></tr>
+<tr><td>b</td><td>二进制模式。</td></tr>
+<tr><td>+</td><td>打开一个文件进行更新(可读可写)。</td></tr>
+<tr><td>U</td><td>通用换行模式（不推荐）。</td></tr>
+<tr><td>r</td><td>以只读方式打开文件。文件的指针将会放在文件的开头。这是默认模式。</td></tr>
+<tr><td>rb</td><td>以二进制格式打开一个文件用于只读。文件指针将会放在文件的开头。这是默认模式。一般用于非文本文件如图片等。</td></tr>
+<tr><td>r+</td><td>打开一个文件用于读写。文件指针将会放在文件的开头。</td></tr>
+<tr><td>rb+</td><td>以二进制格式打开一个文件用于读写。文件指针将会放在文件的开头。一般用于非文本文件如图片等。</td></tr>
+<tr><td>w</td><td>打开一个文件只用于写入。如果该文件已存在则打开文件，并从开头开始编辑，即原有内容会被删除。如果该文件不存在，创建新文件。</td></tr>
+<tr><td>wb</td><td>以二进制格式打开一个文件只用于写入。如果该文件已存在则打开文件，并从开头开始编辑，即原有内容会被删除。如果该文件不存在，创建新文件。一般用于非文本文件如图片等。</td></tr>
+<tr><td>w+</td><td>打开一个文件用于读写。如果该文件已存在则打开文件，并从开头开始编辑，即原有内容会被删除。如果该文件不存在，创建新文件。</td></tr> 
+<tr><td>wb+</td><td>以二进制格式打开一个文件用于读写。如果该文件已存在则打开文件，并从开头开始编辑，即原有内容会被删除。如果该文件不存在，创建新文件。一般用于非文本文件如图片等。</td></tr><tr><td>a</td><td>打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。也就是说，新的内容将会被写入到已有内容之后。如果该文件不存在，创建新文件进行写入。</td></tr> 
+<tr><td>ab</td><td>以二进制格式打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。也就是说，新的内容将会被写入到已有内容之后。如果该文件不存在，创建新文件进行写入。</td></tr> 
+<tr><td>a+</td><td>打开一个文件用于读写。如果该文件已存在，文件指针将会放在文件的结尾。文件打开时会是追加模式。如果该文件不存在，创建新文件用于读写。</td></tr> 
+<tr><td>ab+</td><td>以二进制格式打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。如果该文件不存在，创建新文件用于读写。</td></tr>
+<table class="reference">
+<thead>
+<tr>
+<th style="text-align:center">模式</th>
+<th style="text-align:center">r</th>
+<th style="text-align:center">r+</th>
+<th style="text-align:center">w</th>
+<th style="text-align:center">w+</th>
+<th style="text-align:center">a</th>
+<th style="text-align:center">a+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">读</td>
+<td style="text-align:center">+</td>
+<td style="text-align:center">+</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">+</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">+</td>
+</tr>
+<tr>
+<td style="text-align:center">写</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">+</td>
+<td style="text-align:center">+</td>
+<td style="text-align:center">+</td>
+<td style="text-align:center">+</td>
+<td style="text-align:center">+</td>
+</tr>
+<tr>
+<td style="text-align:center">创建</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">+</td>
+<td style="text-align:center">+</td>
+<td style="text-align:center">+</td>
+<td style="text-align:center">+</td>
+</tr>
+<tr>
+<td style="text-align:center">覆盖</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">+</td>
+<td style="text-align:center">+</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">指针在开始</td>
+<td style="text-align:center">+</td>
+<td style="text-align:center">+</td>
+<td style="text-align:center">+</td>
+<td style="text-align:center">+</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">指针在结尾</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">+</td>
+<td style="text-align:center">+</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>文件打开后会拥有相关属性:</strong></p>
+<blockquote>
+<p>file.closed：如果文件已被关闭，返回true</p>
+<p>file.mode：返回打开文件的模式</p>
+<p>file.name：返回文件的名称</p>
+<p>file.softspace：如果用print输出后，必须跟一个空格符，则返回false。否则返回true。</p>
+</blockquote>
+<p><strong>打开一个文件，mode为’w’:</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">file=open(<span class="string">'test1.txt'</span>,<span class="string">'w'</span>)</span><br><span class="line">print(<span class="string">"close:"</span>,file.closed)</span><br><span class="line">print(<span class="string">'mode:'</span>,file.mode)</span><br><span class="line">print(<span class="string">'name:'</span>,file.name)</span><br><span class="line">---------------------</span><br><span class="line">close: <span class="literal">False</span></span><br><span class="line">mode: w</span><br><span class="line">name: test1.txt</span><br></pre></td></tr></table></figure>
+
+<p>如果打开文件时输入绝对路径，其中包含反斜杠（\），需要用斜杠（/）来替代。</p>
+<h3 id="关闭文件："><a href="#关闭文件：" class="headerlink" title="关闭文件："></a>关闭文件：</h3><p>关闭文件用到close()函数。文件操作时常常会抛出异常，调用close函数常常放在异常处理的finally代码块中。但最好还是使用with as进行自动资源管理。</p>
+<p><strong>在Windows中, open方法打开的文件好像默认为GBK编码，如果你的文本文件用的utf-8格式，就会错误。</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span>: <span class="comment"># 文本中有中文字符，需要用到utf-8进行编码转换</span></span><br><span class="line">    f=open(<span class="string">'test1.txt'</span>,encoding=<span class="string">'utf-8'</span>)</span><br><span class="line"><span class="keyword">except</span> OSError <span class="keyword">as</span> e:</span><br><span class="line">    print(<span class="string">"打开文件失败"</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">"打开文件成功"</span>)</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    content=f.read()</span><br><span class="line">    print(content)</span><br><span class="line"><span class="keyword">except</span> OSError:</span><br><span class="line">    print(<span class="string">"输出失败"</span>)</span><br><span class="line"><span class="keyword">finally</span>:</span><br><span class="line">    f.close()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用with as</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'test1.txt'</span>,encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    print(f.read())</span><br><span class="line">print(f.closed)</span><br><span class="line">------------</span><br><span class="line">打开文件成功</span><br><span class="line">这里是文件的内容！！</span><br><span class="line">这里是文件的内容！！</span><br><span class="line"><span class="literal">True</span>  <span class="comment"># 表示文件已经关闭</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="文本文件读写："><a href="#文本文件读写：" class="headerlink" title="文本文件读写："></a>文本文件读写：</h3><blockquote>
+<ol>
+<li>read(size=-1)：从文件中读取字符串，size是最多读取的字符数，默认为-1，表示全部读取</li>
+<li>readline(size=-1)：读取到换行符或者文件尾并返回单行字符串</li>
+<li>readlines(hint=-1)：读取文件到一个字符串列表中，每一个行数据就是列表的一个元素，hint是限制读取的行数，默认值是-1，表示无限制</li>
+<li>write(s)：将字符串s写入文件，并返回写入的字符数</li>
+<li>writelines(lines)：向文件中写入一个列表，不添加分隔符，因此通常为每一行末尾提供分隔符</li>
+<li>flush()：刷新写缓冲区，数据会写入到文件中</li>
+</ol>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">'test1.txt'</span>,encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    content=f.read()</span><br><span class="line">    print(content)   <span class="comment"># 全部内容</span></span><br><span class="line"> <span class="comment">#   content=f.readline()</span></span><br><span class="line">  <span class="comment">#  print(content)   # 读取到换行符</span></span><br><span class="line">   <span class="comment"># content=f.readlines()</span></span><br><span class="line">    print(<span class="string">'*'</span>*<span class="number">10</span>)</span><br><span class="line">    <span class="keyword">with</span> open(<span class="string">'test2.txt'</span>,<span class="string">'w'</span>,encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> ff:</span><br><span class="line">    	ff.write(<span class="string">'hi world!!'</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="二进制文件读写："><a href="#二进制文件读写：" class="headerlink" title="二进制文件读写："></a>二进制文件读写：</h3><p>二进制读写方式与文本差不多，但要注意的是打开文件的方式必须是rb,wb,ab等等。</p>
+<p><strong>二进制文件中都是一个一个的字节数据。因此读和写，都是针对字节数据的。</strong></p>
+<h4 id="如何把数据转换为字节数据"><a href="#如何把数据转换为字节数据" class="headerlink" title="如何把数据转换为字节数据"></a>如何把数据转换为字节数据</h4><p>先要导入struct库，然后使用struct.pack(fmt,n1,n2,n3….)方法。</p>
+<p>fmt，就是格式化字符串，由数字加字符构成.</p>
+<table>
+<thead>
+<tr>
+<th>格式</th>
+<th>C 类型</th>
+<th>Python 类型</th>
+<th>标准大小</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>x</code></td>
+<td>填充字节</td>
+<td>无</td>
+<td></td>
+</tr>
+<tr>
+<td><code>c</code></td>
+<td><code>char</code></td>
+<td>长度为 1 的字节串</td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>b</code></td>
+<td><code>signed char</code></td>
+<td>整数</td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>B</code></td>
+<td><code>unsigned char</code></td>
+<td>整数</td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>?</code></td>
+<td><code>_Bool</code></td>
+<td>bool</td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>h</code></td>
+<td><code>short</code></td>
+<td>整数</td>
+<td>2</td>
+</tr>
+<tr>
+<td><code>H</code></td>
+<td><code>unsigned short</code></td>
+<td>整数</td>
+<td>2</td>
+</tr>
+<tr>
+<td><code>i</code></td>
+<td><code>int</code></td>
+<td>整数</td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>I</code></td>
+<td><code>unsigned int</code></td>
+<td>整数</td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>l</code></td>
+<td><code>long</code></td>
+<td>整数</td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>L</code></td>
+<td><code>unsigned long</code></td>
+<td>整数</td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>q</code></td>
+<td><code>long long</code></td>
+<td>整数</td>
+<td>8</td>
+</tr>
+<tr>
+<td><code>Q</code></td>
+<td><code>unsigned long long</code></td>
+<td>整数</td>
+<td>8</td>
+</tr>
+<tr>
+<td><code>n</code></td>
+<td><code>ssize_t</code></td>
+<td>整数</td>
+<td></td>
+</tr>
+<tr>
+<td><code>N</code></td>
+<td><code>size_t</code></td>
+<td>整数</td>
+<td></td>
+</tr>
+<tr>
+<td><code>e</code></td>
+<td></td>
+<td>浮点数</td>
+<td>2</td>
+</tr>
+<tr>
+<td><code>f</code></td>
+<td><code>float</code></td>
+<td>浮点数</td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>d</code></td>
+<td><code>double</code></td>
+<td>浮点数</td>
+<td>8</td>
+</tr>
+<tr>
+<td><code>s</code></td>
+<td><code>char[]</code></td>
+<td>字节串</td>
+<td></td>
+</tr>
+<tr>
+<td><code>p</code></td>
+<td><code>char[]</code></td>
+<td>字节串</td>
+<td></td>
+</tr>
+<tr>
+<td><code>P</code></td>
+<td><code>void *</code></td>
+<td>整数</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>为了同c中的结构体交换数据，还要考虑有的c或c++编译器使用了字节对齐，通常是以4个字节为单位的32位系统，故而还提供了</p>
+<table>
+<thead>
+<tr>
+<th align="left">Character</th>
+<th align="left">Byte order</th>
+<th align="left">Size and alignment</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>@</code></td>
+<td align="left">native</td>
+<td align="left">native      凑够4个字节</td>
+</tr>
+<tr>
+<td align="left"><code>=</code></td>
+<td align="left">native</td>
+<td align="left">standard    按原字节数</td>
+</tr>
+<tr>
+<td align="left"><code>&lt;</code></td>
+<td align="left">little-endian</td>
+<td align="left">standard    按原字节数</td>
+</tr>
+<tr>
+<td align="left"><code>&gt;</code></td>
+<td align="left">big-endian</td>
+<td align="left">standard    按原字节数</td>
+</tr>
+<tr>
+<td align="left"><code>!</code></td>
+<td align="left">network (= big-endian)</td>
+<td align="left">standard    按原字节数</td>
+</tr>
+</tbody></table>
+<p>使用方法是放在fmt的第一个位置，就像‘@5s6sif’</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> struct</span><br><span class="line">x=struct.pack(<span class="string">'b'</span>,<span class="number">12</span>)</span><br><span class="line">print(x)</span><br><span class="line">y=struct.pack(<span class="string">'3b'</span>,<span class="number">12</span>,<span class="number">23</span>,<span class="number">43</span>)</span><br><span class="line">print(y)</span><br><span class="line">-----------------</span><br><span class="line"><span class="string">b'\x0c'</span></span><br><span class="line"><span class="string">b'\x0c\x17+'</span></span><br><span class="line">================对数字的另一种转码方式</span><br><span class="line"><span class="comment"># 使用bytes()函数</span></span><br><span class="line">x=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> x:</span><br><span class="line">    print(bytes([i]))</span><br><span class="line">--------------------</span><br><span class="line"><span class="string">b'\x01'</span></span><br><span class="line"><span class="string">b'\x02'</span></span><br><span class="line"><span class="string">b'\x03'</span></span><br><span class="line"><span class="string">b'\x04'</span></span><br></pre></td></tr></table></figure>
+
+<p>当对字符进行转码时,因为c表示字节符，所以要加上b：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> struct</span><br><span class="line">x=struct.pack(<span class="string">'c'</span>,<span class="string">b'a'</span>)</span><br><span class="line">print(x)</span><br><span class="line">-------------</span><br><span class="line"><span class="string">b'a'</span></span><br></pre></td></tr></table></figure>
+
+<p>同样对字符串转码：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> struct</span><br><span class="line">print(struct.pack(<span class="string">'4s'</span>,<span class="string">b'qwer'</span>))</span><br><span class="line">-----------</span><br><span class="line"><span class="string">b'qwer'</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="如何让将二进制解码："><a href="#如何让将二进制解码：" class="headerlink" title="如何让将二进制解码："></a>如何让将二进制解码：</h4><p>使用struct模块中的unpack()函数：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> struct</span><br><span class="line">x=struct.pack(<span class="string">'2i'</span>,<span class="number">12</span>,<span class="number">23</span>)</span><br><span class="line">print(x)</span><br><span class="line">y=struct.unpack(<span class="string">'2i'</span>,x)</span><br><span class="line">print(y)</span><br><span class="line">-------------</span><br><span class="line"><span class="string">b'\x0c\x00\x00\x00\x17\x00\x00\x00'</span></span><br><span class="line">(<span class="number">12</span>, <span class="number">23</span>)</span><br><span class="line"><span class="comment"># unpack函数返回的是一个tuple</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="进行二进制读写："><a href="#进行二进制读写：" class="headerlink" title="进行二进制读写："></a>进行二进制读写：</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> struct</span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'test3.jpg'</span>,<span class="string">'wb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    x=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">434</span>,<span class="number">56</span>]</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> x:</span><br><span class="line">        y=struct.pack(<span class="string">'i'</span>,i)</span><br><span class="line">        f.write(y)</span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'test3.jpg'</span>,<span class="string">'rb'</span>) <span class="keyword">as</span> ff:</span><br><span class="line">        a=ff.read()</span><br><span class="line">        print(struct.unpack(<span class="string">'5i'</span>,a))</span><br><span class="line">------------</span><br><span class="line">(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">434</span>, <span class="number">56</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="文件定位："><a href="#文件定位：" class="headerlink" title="文件定位："></a>文件定位：</h3><p>tell()方法告诉文件内的当前位置, 即下一次的读写会发生在当前位置之后。</p>
+<p>seek（offset [,from]）方法改变当前文件的位置。Offset变量表示要移动的字节数。From变量指定开始移动字节的参考位置。</p>
+<p>如果from被设为0，这意味着将文件的开头作为移动字节的参考位置。</p>
+<p>如果设为1，则使用当前的位置作为参考位置。</p>
+<p>如果它被设为2，那么该文件的末尾将作为参考位置。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">'test1.txt'</span>,<span class="string">'r'</span>,encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    out=f.read(<span class="number">4</span>)		<span class="comment"># 读取四个字符</span></span><br><span class="line">    print(out)</span><br><span class="line">    place=f.tell()		<span class="comment"># 查找当前位置</span></span><br><span class="line">    print(place)</span><br><span class="line">    place=f.seek(<span class="number">0</span>,<span class="number">0</span>)	<span class="comment"># 返回开头</span></span><br><span class="line">    print(place)</span><br><span class="line">    out=f.read(<span class="number">5</span>)		<span class="comment"># 读取五个字符</span></span><br><span class="line">    print(out)</span><br><span class="line">-----------</span><br><span class="line">这里是文</span><br><span class="line"><span class="number">12</span></span><br><span class="line"><span class="number">0</span></span><br><span class="line">这里是文件</span><br></pre></td></tr></table></figure>
+
+<h2 id="OS模块"><a href="#OS模块" class="headerlink" title="OS模块"></a>OS模块</h2><p>python对文件的操作是通过io模块中的文件对象实现的。如果想用python来管理文件或目录，如删除文件，重命名等等，可以通过python的os模块实现。</p>
+<blockquote>
+<ol>
+<li>os.rename(source,file)：重命名文件，前面一个参数是当前的文件名，后一个是新文件名</li>
+<li>os.remove(path)：删除文件，参数是文件名</li>
+<li>os.getcwd()：显示当前工作目录名</li>
+<li>os.mkdir(path)：创建目录，在当前目录下创建新的目录们 ，参数是要创建的目录名</li>
+<li>os.chdir(path)：改变当前目录，参数是改变到的目录名</li>
+<li>os.rmdir(path)：删除目录，参数是需要删除的目录名</li>
+<li>os.walk(top)：用于通过在目录树中游走输出在目录中的文件名，向上或者向下。</li>
+<li>os.listdir(path) ：输出目录下所有的子目录 ，参数是目录名                                                                                                                                           </li>
+</ol>
+</blockquote>
+<h3 id="1-os-rename-source-file"><a href="#1-os-rename-source-file" class="headerlink" title="1. os.rename(source,file)"></a>1. os.rename(source,file)</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">os.rename(<span class="string">'test1.txt'</span>,<span class="string">'t1.txt'</span>)</span><br><span class="line"><span class="comment"># 改变的是当前目录下的文件</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-os-remove-path"><a href="#2-os-remove-path" class="headerlink" title="2.  os.remove(path)"></a>2.  os.remove(path)</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">os.remove(<span class="string">'t1.txt'</span>)     <span class="comment"># 成功</span></span><br><span class="line">os.remove(<span class="string">'新建文件夹'</span>)   <span class="comment"># 失败</span></span><br><span class="line"><span class="comment"># os.remove不能用来删除文件夹，否则拒绝访问。</span></span><br><span class="line">------------------</span><br><span class="line">PermissionError: [WinError <span class="number">5</span>] 拒绝访问。: <span class="string">'新建文件夹'</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>如果想要删除一个文件夹，可以使用：shutil.rmtree( src) ，参数是文件夹名，需要先导入shutil库。</strong></p>
+<h3 id="3-os-walk-top"><a href="#3-os-walk-top" class="headerlink" title="3. os.walk(top)"></a>3. os.walk(top)</h3><p>os.walk() 方法是一个简单易用的文件、目录遍历器，可以帮助我们高效的处理文件、目录方面的事情。</p>
+<p><strong>top</strong> – 是你所要遍历的目录的地址, 返回的是一个三元组(root,dirs,files)。</p>
+<blockquote>
+<p>root 所指的是当前正在遍历的这个文件夹的本身的地址</p>
+<p>dirs 是一个 list ，内容是该文件夹中所有的目录的名字(不包括子目录)</p>
+<p>files 同样是 list , 内容是该文件夹中所有的文件(不包括子目录)</p>
+</blockquote>
+<p>该方法没有返回值。</p>
+<h3 id="简单应用"><a href="#简单应用" class="headerlink" title="简单应用"></a>简单应用</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">path=<span class="string">'F:\\draft'</span></span><br><span class="line">print(os.listdir(path))</span><br><span class="line">os.rename(<span class="string">'test2.txt'</span>,<span class="string">'t2.txt'</span>)</span><br><span class="line">print(os.listdir(path))</span><br><span class="line">os.mkdir(<span class="string">'new'</span>)</span><br><span class="line">print(os.listdir(path))</span><br><span class="line">os.chdir(<span class="string">'F:\\draft\\new'</span>)</span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'tt.txt'</span>,<span class="string">'w'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(<span class="string">"hi newer!!"</span>)</span><br><span class="line">print(os.listdir())</span><br><span class="line">----------------------------</span><br><span class="line">[ <span class="string">'python文件.md'</span>, <span class="string">'test2.txt'</span>]</span><br><span class="line">[ <span class="string">'python文件.md'</span>, <span class="string">'t2.txt'</span>]</span><br><span class="line">[ <span class="string">'new'</span>,<span class="string">'python文件.md'</span>, <span class="string">'t2.txt'</span>]</span><br><span class="line">[<span class="string">'tt.txt'</span>]</span><br></pre></td></tr></table></figure>
+
+<h3 id="OS-path-模块"><a href="#OS-path-模块" class="headerlink" title="OS.path 模块"></a>OS.path 模块</h3><p>对文件进行操作经常需要用到路径，而os.path模块对路径，文件，目录等管理的函数。</p>
+<blockquote>
+<p>os.path.abspath(path)：返回path的绝对路径</p>
+<p>os.path.nasename(path)：如果path指向文件，就返回文件名；如果path指向目录，就返回目录名</p>
+<p>os.path.dirname(path)：返回path中的目录名</p>
+<p>os.path.exists(path)：判断path文件是否存在</p>
+<p>os.path.isfile(path)：如果path是文件，就返回True</p>
+<p>os.path.isdir(path)：如果path是目录，就返回True</p>
+<p>os.path.datetime(path)：返回最后一次访问时间，如果文件不存在或无法访问，就返回OSError</p>
+<p>os.path.getmtime(path)：返回最后修改时间</p>
+<p>os.path.getctime(path)：返回创造时间</p>
+<p>os.path.getsize(path)：返回文件大小，以字节为单位</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> os.path</span><br><span class="line">f=<span class="string">"t2.txt"</span></span><br><span class="line">print(os.path.abspath(f))</span><br><span class="line">print(os.path.getctime(f))</span><br><span class="line">print(os.path.getsize(f))</span><br><span class="line">-------------------</span><br><span class="line">F:\draft\t2.txt</span><br><span class="line"><span class="number">1582360105.9586117</span>  <span class="comment"># 返回的是时间戳</span></span><br><span class="line"><span class="number">36</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 如果希望返回的的时间能从时间戳转变到显示时间</span></span><br><span class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> datetime</span><br><span class="line"><span class="keyword">import</span> os.path</span><br><span class="line">f=<span class="string">"t2.txt"</span></span><br><span class="line">print(datetime.datetime.fromtimestamp(os.path.getctime(f))</span><br><span class="line">--------------------</span><br><span class="line"><span class="number">2020</span><span class="number">-02</span><span class="number">-22</span> <span class="number">16</span>:<span class="number">28</span>:<span class="number">25.958612</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+  </entry>
+  <entry>
     <title>python例题</title>
     <url>/2020/02/26/python%E4%BE%8B%E9%A2%98/</url>
     <content><![CDATA[<h2 id="python-例"><a href="#python-例" class="headerlink" title="python 例"></a>python 例</h2><a id="more"></a>
