@@ -1,6 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>离散一</title>
+    <url>/2020/04/13/%E7%A6%BB%E6%95%A3%E4%B8%80/</url>
+    <content><![CDATA[<ol>
+<li><p>集合论中只有集合，没有其他东西</p>
+</li>
+<li><p>造集谓词P(x)，A={x|P(x)}:</p>
+<ol>
+<li>对任意x，具有性质P，则x一定属于A</li>
+<li>对任意x，属于A，则一定就具有性质P</li>
+</ol>
+</li>
+<li><p>概括原则，任意性质P具有唯一的集合A对应</p>
+</li>
+<li><p>罗素悖论：罗素构造了一个集合S，S由一切不属于自身的集合所组成。然后罗素问：s是否属于S呢？根据排中律，一个元素或者属于某个集合，或者不属于某个集合。因此，对于一个给定集合，问是否属于它自己是有意义的。但对这个看似合理的问题的回答却会陷入两难境地。如果s属于S，根据S的定义，s就不属于S；反之，如果s不属于S，同样根据定义，s就属于S。无论如何都是矛盾的。</p>
+</li>
+<li><p>所谓幂集（Power Set）， 就是原<a href="https://baike.baidu.com/item/集合/2908117" target="_blank" rel="noopener">集合</a>中所有的<a href="https://baike.baidu.com/item/子集/5017034" target="_blank" rel="noopener">子集</a>（包括全集和<a href="https://baike.baidu.com/item/空集/5016874" target="_blank" rel="noopener">空集</a>）构成的集族。<a href="https://baike.baidu.com/item/可数集/2126728" target="_blank" rel="noopener">可数集</a>是最小的<a href="https://baike.baidu.com/item/无限集/5017054" target="_blank" rel="noopener">无限集</a>； 它的幂集和<a href="https://baike.baidu.com/item/实数集/10340809" target="_blank" rel="noopener">实数集</a>一一对应（也称同势），是<a href="https://baike.baidu.com/item/不可数集/9276196" target="_blank" rel="noopener">不可数集</a>。 不是所有不可数集都和实数集<a href="https://baike.baidu.com/item/等势" target="_blank" rel="noopener">等势</a>，<a href="https://baike.baidu.com/item/集合的势" target="_blank" rel="noopener">集合的势</a>可以无限的大。如实数集的幂集也是不可数集，但它的势比实数集大。 设X是一个<a href="https://baike.baidu.com/item/有限集/5016913" target="_blank" rel="noopener">有限集</a>，|X| = k，根据<a href="https://baike.baidu.com/item/二项式定理/7134359" target="_blank" rel="noopener">二项式定理</a>，X的幂集的势为2的k次方。</p>
+<p>设有集合A，由A的所有<a href="https://baike.baidu.com/item/子集" target="_blank" rel="noopener">子集</a>组成的集合，称为A的幂集，记作2A，即：2A={S|S⊆A}。</p>
+</li>
+<li><p>|A| “ | |”表示这个集合中元素的个数<br>$$<br>|A|=n,|P(A)|=2^n=2^{|A|}<br>$$</p>
+</li>
+</ol>
+<p>证明空集是A的子集(反证法)</p>
+]]></content>
+      <categories>
+        <category>离散数学</category>
+      </categories>
+  </entry>
+  <entry>
     <title>python文件</title>
     <url>/2020/03/03/python%E6%96%87%E4%BB%B6/</url>
     <content><![CDATA[<h1 id="python-文件"><a href="#python-文件" class="headerlink" title="python 文件"></a>python 文件</h1><a id="more"></a>
