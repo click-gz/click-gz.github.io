@@ -1,9 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>离散2</title>
+    <url>/2020/04/16/%E7%A6%BB%E6%95%A32/</url>
+    <content><![CDATA[<h1 id="集合逻辑推理"><a href="#集合逻辑推理" class="headerlink" title="集合逻辑推理"></a>集合逻辑推理</h1><a id="more"></a>
+<p>$补集：\overline{A}=E-A,E为此前所讨论域$</p>
+<p>$A-B\neq b-1$</p>
+<p>$A\bigoplus B=(A-B)\bigcup (B-A)=B\bigoplus A$</p>
+<p>$a\in A\bigcup B\Leftrightarrow a\in Aora\in B\Leftrightarrow a\in Bora\in A \Leftrightarrow a\in B\bigcup A$</p>
+<p>$a\in A_1 \Leftrightarrow a\in A_2—A_1=A_2$</p>
+<p>$P\  or\  Q\Rightarrow S&lt;—-P\Rightarrow S + Q\Rightarrow S$</p>
+<p>$S\Rightarrow P\bigcup Q&lt;—1. A,\neg P\Rightarrow Q$<br>$&lt;—2. A,\neg Q\Rightarrow P$<br>$&lt;—3. A,\neg (P\bigcup Q)\Rightarrow  \perp$(反证)</p>
+<p>$(A\bigcup B)\bigcup C=A\bigcup (B\bigcup C)$<br>$(A\bigcap B)\bigcap C=A\bigcap(B\bigcap C)$</p>
+]]></content>
+      <categories>
+        <category>离散</category>
+      </categories>
+  </entry>
+  <entry>
     <title>离散一</title>
     <url>/2020/04/13/%E7%A6%BB%E6%95%A3%E4%B8%80/</url>
-    <content><![CDATA[<ol>
+    <content><![CDATA[<h1 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h1><a id="more"></a>
+
+<ol>
 <li><p>集合论中只有集合，没有其他东西</p>
 </li>
 <li><p>造集谓词P(x)，A={x|P(x)}:</p>
@@ -2424,7 +2443,8 @@
   <entry>
     <title>数竞--数列极限</title>
     <url>/2020/01/06/%E6%95%B0%E5%88%97/</url>
-    <content><![CDATA[<h2 id="数列及其子列"><a href="#数列及其子列" class="headerlink" title="数列及其子列"></a>数列及其子列</h2><a id="more"></a>
+    <content><![CDATA[<h1 id="数列及其子列"><a href="#数列及其子列" class="headerlink" title="数列及其子列"></a>数列及其子列</h1><a id="more"></a>
+
 <ol>
 <li><p>数列收敛，其子列收敛；</p>
 </li>
