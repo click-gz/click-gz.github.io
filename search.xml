@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>python库文件下载遇到的问题</title>
+    <url>/2020/10/05/python%E5%BA%93%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<h1 id="python库文件下载遇到的问题"><a href="#python库文件下载遇到的问题" class="headerlink" title="python库文件下载遇到的问题"></a>python库文件下载遇到的问题</h1><a id="more"></a>
+
+<h2 id="ImportError"><a href="#ImportError" class="headerlink" title="ImportError"></a>ImportError</h2><p>一般是因为没有相应的库文件，需要在终端或者cmd下载。例如：ImportError: cannot import name ‘BeautifulSoup’ from partially initialized module ‘bs4’</p>
+<p>或者：pip  install 包名-i <a href="http://pypi.douban.com/simple/--trusted-host" target="_blank" rel="noopener">http://pypi.douban.com/simple/--trusted-host</a> pypi.douban.com</p>
+<h2 id="超时错误"><a href="#超时错误" class="headerlink" title="超时错误"></a>超时错误</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pip._vendor.urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host=<span class="string">'files.pythonhosted.org'</span>, port=<span class="number">443</span>): Read timed out.</span><br></pre></td></tr></table></figure>
+
+<p>一般有三种解决方案：</p>
+<pre><code>1. 升级pip：You should consider upgrading via the &apos;python -m pip install --upgrade pip&apos; command.
+ 2. 使用延时：pip --default-timeout=1000 install -U 库名（需要安装的）
+ 3. 换个网试试吧</code></pre>]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+  </entry>
+  <entry>
     <title>线程</title>
     <url>/2020/09/17/%E7%BA%BF%E7%A8%8B/</url>
     <content><![CDATA[<h1 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h1><a id="more"></a>
